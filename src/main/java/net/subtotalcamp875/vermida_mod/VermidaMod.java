@@ -17,7 +17,6 @@ import org.slf4j.Logger;
 @Mod(VermidaMod.MOD_ID)
 public class VermidaMod {
     public static final String MOD_ID = "vermida_mod";
-
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public VermidaMod() {
