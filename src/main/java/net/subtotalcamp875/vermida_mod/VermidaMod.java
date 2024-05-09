@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.subtotalcamp875.vermida_mod.block.ModBlocks;
 import net.subtotalcamp875.vermida_mod.item.ModCreativeModeTabs;
 import net.subtotalcamp875.vermida_mod.item.ModItems;
 import org.slf4j.Logger;
@@ -29,6 +30,7 @@ public class VermidaMod {
         ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+        ModBlocks.register((modEventBus));
 
         modEventBus.addListener(this::commonSetup);
 

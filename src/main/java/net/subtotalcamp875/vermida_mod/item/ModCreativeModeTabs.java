@@ -8,6 +8,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.subtotalcamp875.vermida_mod.VermidaMod;
+import net.subtotalcamp875.vermida_mod.block.ModBlocks;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -21,6 +22,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SUMMONING_ESSENCE.get());
                         output.accept(ModItems.BRONZE_KEY.get());
                         output.accept(ModItems.SUMMONING_CRYSTAL.get());
+
+
+                        output.accept(ModBlocks.SUMMONING_CRYSTAL_BLOCK.get());
 
 
                     })

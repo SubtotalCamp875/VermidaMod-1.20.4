@@ -4,5 +4,8 @@
   "item.vermida_mod.bronze_key": "Bronze Key",
   "item.vermida_mod.summoning_crystal": "Summoning Crystal",
 
+
+  "block.vermida_mod.summoning_crystal_block": "Block of Summoning Crystal",
+
   "creativetab.vermida_tab": "Vermida Mod Tab"
 }
