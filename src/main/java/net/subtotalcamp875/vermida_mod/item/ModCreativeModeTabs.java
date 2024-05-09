@@ -23,6 +23,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BRONZE_KEY.get());
                         output.accept(ModItems.SUMMONING_CRYSTAL.get());
 
+                        output.accept(ModItems.METAL_DETECTOR.get());
+
 
                         output.accept(ModBlocks.SUMMONING_CRYSTAL_BLOCK.get());
 
