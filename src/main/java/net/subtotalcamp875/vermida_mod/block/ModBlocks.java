@@ -11,6 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.subtotalcamp875.vermida_mod.VermidaMod;
+import net.subtotalcamp875.vermida_mod.block.custom.bronze_refiner_block;
 import net.subtotalcamp875.vermida_mod.item.ModItems;
 
 import java.util.function.Supplier;
@@ -21,6 +22,11 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SUMMONING_CRYSTAL_BLOCK = registerBlock("summoning_crystal_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.CHAIN)));
+
+    public static final RegistryObject<Block> BRONZE_REFINER_BLOCK = registerBlock("bronze_refiner_block",
+            () -> new bronze_refiner_block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.COPPER)));
+
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

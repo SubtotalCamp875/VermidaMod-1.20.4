@@ -27,6 +27,7 @@ public class ModCreativeModeTabs {
 
 
                         output.accept(ModBlocks.SUMMONING_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.BRONZE_REFINER_BLOCK.get());
 
 
                     })
