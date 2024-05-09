@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "vermida_mod:summoning_crystal"
+    }
+  },
+  "result": {
+    "item": "vermida_mod:summoning_crystal_block"
+  }
+}
