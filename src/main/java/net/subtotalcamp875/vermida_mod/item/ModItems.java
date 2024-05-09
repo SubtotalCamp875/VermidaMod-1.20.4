@@ -17,6 +17,12 @@ public class ModItems {
     public static final RegistryObject<Item> SUMMONING_ESSENCE = ITEMS.register("summoning_essence",
             ()-> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> BRONZE_KEY = ITEMS.register("bronze_key",
+            ()-> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> SUMMONING_CRYSTAL = ITEMS.register("summoning_crystal",
+            ()-> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

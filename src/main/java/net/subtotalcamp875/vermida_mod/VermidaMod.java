@@ -44,6 +44,8 @@ public class VermidaMod {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.SAPPHIRE);
             event.accept(ModItems.SUMMONING_ESSENCE);
+            event.accept(ModItems.BRONZE_KEY);
+            event.accept(ModItems.SUMMONING_CRYSTAL);
         }
     }
 

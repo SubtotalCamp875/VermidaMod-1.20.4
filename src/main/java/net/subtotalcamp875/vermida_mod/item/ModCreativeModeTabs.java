@@ -19,6 +19,8 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.SAPPHIRE.get());
                         output.accept(ModItems.SUMMONING_ESSENCE.get());
+                        output.accept(ModItems.BRONZE_KEY.get());
+                        output.accept(ModItems.SUMMONING_CRYSTAL.get());
 
 
                     })
