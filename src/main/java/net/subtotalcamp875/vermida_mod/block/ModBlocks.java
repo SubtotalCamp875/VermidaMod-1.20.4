@@ -21,8 +21,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, VermidaMod.MOD_ID);
 
     public static final RegistryObject<Block> SUMMONING_CRYSTAL_BLOCK = registerBlock("summoning_crystal_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.CHAIN)));
-
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.LODESTONE)));
     public static final RegistryObject<Block> BRONZE_REFINER_BLOCK = registerBlock("bronze_refiner_block",
             () -> new bronze_refiner_block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.COPPER)));
 

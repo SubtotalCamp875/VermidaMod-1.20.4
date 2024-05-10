@@ -10,5 +10,7 @@
   "block.vermida_mod.summoning_crystal_block": "Block of Summoning Crystal",
   "block.vermida_mod.bronze_refiner_block": "Bronze Refiner",
 
-  "creativetab.vermida_tab": "Vermida Mod Tab"
+  "creativetab.vermida_tab": "Vermida Mod Tab",
+
+  "tooltip.vermida_mod.metal_detector.tooltip": "Find valuables underground"
 }
