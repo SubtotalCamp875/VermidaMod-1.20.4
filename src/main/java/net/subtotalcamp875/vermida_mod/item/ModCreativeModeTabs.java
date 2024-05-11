@@ -25,6 +25,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.METAL_DETECTOR.get());
 
+                        output.accept(ModItems.LEATHER_SUMMON_SPAWN_EGG.get());
+
 
                         output.accept(ModBlocks.SUMMONING_CRYSTAL_BLOCK.get());
                         output.accept(ModBlocks.BRONZE_REFINER_BLOCK.get());
