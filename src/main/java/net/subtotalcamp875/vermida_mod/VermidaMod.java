@@ -50,10 +50,20 @@ public class VermidaMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.SAPPHIRE);
-            event.accept(ModItems.SUMMONING_ESSENCE);
-            event.accept(ModItems.BRONZE_KEY);
-            event.accept(ModItems.SUMMONING_CRYSTAL);
+            event.accept(ModItems.SAPPHIRE.get());
+            event.accept(ModItems.SUMMONING_ESSENCE.get());
+            event.accept(ModItems.SUMMONING_CRYSTAL.get());
+
+            event.accept(ModItems.BRONZE_KEY.get());
+            event.accept(ModItems.BRONZE_CORE.get());
+
+            event.accept(ModItems.METAL_DETECTOR.get());
+
+            event.accept(ModItems.LEATHER_SUMMON_SPAWN_EGG.get());
+
+
+            event.accept(ModBlocks.SUMMONING_CRYSTAL_BLOCK.get());
+            event.accept(ModBlocks.BRONZE_REFINER_BLOCK.get());
         }
     }
 

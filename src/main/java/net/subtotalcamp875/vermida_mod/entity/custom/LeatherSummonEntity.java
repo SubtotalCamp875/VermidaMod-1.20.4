@@ -3,9 +3,7 @@ package net.subtotalcamp875.vermida_mod.entity.custom;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.AnimationState;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -18,9 +16,9 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 public class LeatherSummonEntity extends Monster {
-
     public LeatherSummonEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+        this.xpReward = 20;
     }
 
     public final AnimationState idleAnimationState = new AnimationState();
@@ -35,6 +33,8 @@ public class LeatherSummonEntity extends Monster {
         }
     }
 
+
+
     private void setupAnimationStates() {
         if (this.idleAnimationTimeout <= 0) {
             this.idleAnimationTimeout = this.random.nextInt(40) + 80;
@@ -44,17 +44,6 @@ public class LeatherSummonEntity extends Monster {
         }
     }
 
-    @Override
-    protected void updateWalkAnimation(float pPartialTick) {
-        float f;
-        if(this.getPose() == Pose.STANDING) {
-            f = Math.min(pPartialTick * 6.0F, 1F);
-        } else {
-            f = 0.0F;
-        }
-
-        this.walkAnimation.update(f, 0.2F);
-    }
 
     @Override
     protected void registerGoals() {
@@ -73,9 +62,9 @@ public class LeatherSummonEntity extends Monster {
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createLivingAttributes()
                 .add(Attributes.MAX_HEALTH, 200.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.35)
+                .add(Attributes.MOVEMENT_SPEED, 0.4)
                 .add(Attributes.ATTACK_DAMAGE, 30.0)
-                .add(Attributes.ATTACK_KNOCKBACK, 5.0)
+                .add(Attributes.ATTACK_KNOCKBACK, 7.0)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.2)
                 .add(Attributes.ATTACK_SPEED, 0.2)
                 .add(Attributes.FOLLOW_RANGE, 32.0F);

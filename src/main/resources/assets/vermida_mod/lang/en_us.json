@@ -1,8 +1,10 @@
 {
   "item.vermida_mod.sapphire": "Sapphire",
   "item.vermida_mod.summoning_essence": "Summoning Essence",
-  "item.vermida_mod.bronze_key": "Bronze Key",
   "item.vermida_mod.summoning_crystal": "Summoning Crystal",
+
+  "item.vermida_mod.bronze_key": "Bronze Key",
+  "item.vermida_mod.bronze_core": "Bronze Core",
 
   "item.vermida_mod.metal_detector": "Metal Detector",
 
