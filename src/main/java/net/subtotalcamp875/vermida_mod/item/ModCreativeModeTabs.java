@@ -40,6 +40,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CONDENSED_SHAMAN_BLOOD.get());
                         output.accept(ModItems.VERY_CONDENSED_SHAMAN_BLOOD.get());
                         output.accept(ModItems.EXTREMELY_CONDENSED_SHAMAN_BLOOD.get());
+                        output.accept(ModBlocks.BLOOD_CONDENSING_STATION_BLOCK.get());
 
                         output.accept(ModItems.LEATHER_SUMMON_SPAWN_EGG.get());
 

@@ -1,6 +1,7 @@
 package net.subtotalcamp875.vermida_mod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -16,10 +17,13 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.subtotalcamp875.vermida_mod.block.ModBlocks;
+import net.subtotalcamp875.vermida_mod.block.entity.ModBlockEntities;
 import net.subtotalcamp875.vermida_mod.entity.ModEntities;
 import net.subtotalcamp875.vermida_mod.entity.client.LeatherSummonRenderer;
 import net.subtotalcamp875.vermida_mod.item.ModCreativeModeTabs;
 import net.subtotalcamp875.vermida_mod.item.ModItems;
+import net.subtotalcamp875.vermida_mod.screen.BloodCondensingStationScreen;
+import net.subtotalcamp875.vermida_mod.screen.ModMenuTypes;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -37,6 +41,10 @@ public class VermidaMod {
         ModBlocks.register((modEventBus));
 
         ModEntities.register((modEventBus));
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
 
         modEventBus.addListener(this::commonSetup);
 
@@ -78,6 +86,8 @@ public class VermidaMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.LEATHER_SUMMON.get(), LeatherSummonRenderer::new);
+
+            MenuScreens.register(ModMenuTypes.BLOOD_CONDENSING_STATION_MENU.get(), BloodCondensingStationScreen::new);
         }
     }
 }

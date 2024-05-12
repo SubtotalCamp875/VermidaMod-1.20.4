@@ -11,6 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.subtotalcamp875.vermida_mod.VermidaMod;
+import net.subtotalcamp875.vermida_mod.block.custom.BloodCondensingStationBlock;
 import net.subtotalcamp875.vermida_mod.block.custom.bronze_refiner_block;
 import net.subtotalcamp875.vermida_mod.item.ModItems;
 
@@ -24,7 +25,8 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.LODESTONE)));
     public static final RegistryObject<Block> BRONZE_REFINER_BLOCK = registerBlock("bronze_refiner_block",
             () -> new bronze_refiner_block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.COPPER)));
-
+    public static final RegistryObject<Block> BLOOD_CONDENSING_STATION_BLOCK = registerBlock("blood_condensing_station_block",
+            () -> new BloodCondensingStationBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion().sound(SoundType.ANVIL)));
 
 
 
