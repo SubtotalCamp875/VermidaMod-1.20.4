@@ -1,16 +1,27 @@
 {
   "item.vermida_mod.sapphire": "Sapphire",
+  "item.vermida_mod.metal_detector": "Metal Detector",
+
   "item.vermida_mod.summoning_essence": "Summoning Essence",
   "item.vermida_mod.summoning_crystal": "Summoning Crystal",
+  "block.vermida_mod.summoning_crystal_block": "Block of Summoning Crystal",
 
   "item.vermida_mod.bronze_key": "Bronze Key",
   "item.vermida_mod.bronze_core": "Bronze Core",
-
-  "item.vermida_mod.metal_detector": "Metal Detector",
-
-
-  "block.vermida_mod.summoning_crystal_block": "Block of Summoning Crystal",
   "block.vermida_mod.bronze_refiner_block": "Bronze Refiner",
+
+  "item.vermida_mod.magic_helmet": "Magic Helmet",
+  "item.vermida_mod.magic_chestplate": "Magic Chestplate",
+  "item.vermida_mod.magic_leggings": "Magic Leggings",
+  "item.vermida_mod.magic_boots": "Magic Boots",
+
+  "item.vermida_mod.shaman_blood": "Shaman Blood",
+  "item.vermida_mod.slightly_condensed_shaman_blood": "Slightly Condensed Shaman Blood",
+  "item.vermida_mod.lightly_condensed_shaman_blood": "Lightly Condensed Shaman Blood",
+  "item.vermida_mod.condensed_shaman_blood": "Condensed Shaman Blood",
+  "item.vermida_mod.very_condensed_shaman_blood": "Very Condensed Shaman Blood",
+  "item.vermida_mod.extremely_condensed_shaman_blood": "Extremely Condensed Shaman Blood",
+
 
   "creativetab.vermida_tab": "Vermida Mod Tab",
 

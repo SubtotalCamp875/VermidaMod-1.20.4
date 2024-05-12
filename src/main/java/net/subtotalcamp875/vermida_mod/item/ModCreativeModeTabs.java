@@ -19,20 +19,29 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.vermida_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.SAPPHIRE.get());
+                        output.accept(ModItems.METAL_DETECTOR.get());
+
                         output.accept(ModItems.SUMMONING_ESSENCE.get());
                         output.accept(ModItems.SUMMONING_CRYSTAL.get());
+                        output.accept(ModBlocks.SUMMONING_CRYSTAL_BLOCK.get());
 
                         output.accept(ModItems.BRONZE_KEY.get());
                         output.accept(ModItems.BRONZE_CORE.get());
-
-                        output.accept(ModItems.METAL_DETECTOR.get());
-
-                        output.accept(ModItems.LEATHER_SUMMON_SPAWN_EGG.get());
-
-
-                        output.accept(ModBlocks.SUMMONING_CRYSTAL_BLOCK.get());
                         output.accept(ModBlocks.BRONZE_REFINER_BLOCK.get());
 
+                        output.accept(ModItems.MAGIC_HELMET.get());
+                        output.accept(ModItems.MAGIC_CHESTPLATE.get());
+                        output.accept(ModItems.MAGIC_LEGGINGS.get());
+                        output.accept(ModItems.MAGIC_BOOTS.get());
+
+                        output.accept(ModItems.SHAMAN_BLOOD.get());
+                        output.accept(ModItems.SLIGHTLY_CONDENSED_SHAMAN_BLOOD.get());
+                        output.accept(ModItems.LIGHTLY_CONDENSED_SHAMAN_BLOOD.get());
+                        output.accept(ModItems.CONDENSED_SHAMAN_BLOOD.get());
+                        output.accept(ModItems.VERY_CONDENSED_SHAMAN_BLOOD.get());
+                        output.accept(ModItems.EXTREMELY_CONDENSED_SHAMAN_BLOOD.get());
+
+                        output.accept(ModItems.LEATHER_SUMMON_SPAWN_EGG.get());
 
                     })
                     .build());
