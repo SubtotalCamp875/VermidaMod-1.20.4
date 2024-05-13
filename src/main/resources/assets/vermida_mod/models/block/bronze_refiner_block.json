@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "vermida_mod:block/bronze_refiner_block"
-  }
-}

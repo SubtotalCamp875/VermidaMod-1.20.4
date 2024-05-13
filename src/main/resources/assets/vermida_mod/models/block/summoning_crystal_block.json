@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "vermida_mod:block/summoning_crystal_block"
-  }
-}

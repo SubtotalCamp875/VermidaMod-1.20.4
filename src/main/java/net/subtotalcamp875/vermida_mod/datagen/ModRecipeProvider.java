@@ -50,7 +50,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', ModItems.CONDENSED_SHAMAN_BLOOD.get())
                 .define('G', Blocks.GLASS)
                 .unlockedBy(getHasName(ModItems.SUMMONING_CRYSTAL.get()), has(ModItems.SUMMONING_CRYSTAL.get()))
-                .save(pRecipeOutput);
+                .save(pRecipeOutput, "summoning_crystal_from_essence_and_blood");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUMMONING_CRYSTAL.get(), 2)
                 .pattern(" G ")
@@ -59,7 +59,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', ModItems.EXTREMELY_CONDENSED_SHAMAN_BLOOD.get())
                 .define('G', Blocks.GLASS)
                 .unlockedBy(getHasName(ModItems.SUMMONING_CRYSTAL.get()), has(ModItems.SUMMONING_CRYSTAL.get()))
-                .save(pRecipeOutput);
+                .save(pRecipeOutput, "summoning_crystal_from_glass_and_blood");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUMMONING_CRYSTAL.get())
                 .pattern("EEE")
@@ -67,7 +67,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("EEE")
                 .define('E', ModItems.SUMMONING_ESSENCE.get())
                 .unlockedBy(getHasName(ModItems.SUMMONING_ESSENCE.get()), has(ModItems.SUMMONING_ESSENCE.get()))
-                .save(pRecipeOutput);
+                .save(pRecipeOutput, "summoning_crystal_from_essence");
 
 
 
