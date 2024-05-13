@@ -20,12 +20,12 @@ public class BloodCondensingStationMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public BloodCondensingStationMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(9));
     }
 
     public BloodCondensingStationMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.BLOOD_CONDENSING_STATION_MENU.get(), pContainerId);
-        checkContainerSize(inv, 2);
+        checkContainerSize(inv, 9);
         blockEntity = ((BloodCondensingStationBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
@@ -34,15 +34,15 @@ public class BloodCondensingStationMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-            this.addSlot((new SlotItemHandler(iItemHandler, 3, 116, 11)));
-            this.addSlot((new SlotItemHandler(iItemHandler, 9, 116, 59)));
-            this.addSlot((new SlotItemHandler(iItemHandler, 6, 80, 29)));
-            this.addSlot((new SlotItemHandler(iItemHandler, 1, 26, 11)));
-            this.addSlot((new SlotItemHandler(iItemHandler, 2, 44, 11)));
-            this.addSlot((new SlotItemHandler(iItemHandler, 4, 26, 29)));
-            this.addSlot((new SlotItemHandler(iItemHandler, 5, 44, 29)));
-            this.addSlot((new SlotItemHandler(iItemHandler, 7, 26, 47)));
-            this.addSlot((new SlotItemHandler(iItemHandler, 8, 44, 47)));
+            this.addSlot((new SlotItemHandler(iItemHandler, 2, 116, 11)));
+            this.addSlot((new SlotItemHandler(iItemHandler, 8, 116, 59)));
+            this.addSlot((new SlotItemHandler(iItemHandler, 5, 80, 29)));
+            this.addSlot((new SlotItemHandler(iItemHandler, 0, 26, 11)));
+            this.addSlot((new SlotItemHandler(iItemHandler, 1, 44, 11)));
+            this.addSlot((new SlotItemHandler(iItemHandler, 3, 26, 29)));
+            this.addSlot((new SlotItemHandler(iItemHandler, 4, 44, 29)));
+            this.addSlot((new SlotItemHandler(iItemHandler, 6, 26, 47)));
+            this.addSlot((new SlotItemHandler(iItemHandler, 7, 44, 47)));
         });
 
         addDataSlots(data);
@@ -128,7 +128,7 @@ public class BloodCondensingStationMenu extends AbstractContainerMenu {
 
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + 1 * 18, 142));
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
     }
 }

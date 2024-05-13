@@ -41,7 +41,7 @@ public class BloodCondensingStationScreen extends AbstractContainerScreen<BloodC
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if (menu.isCrafting()) {
-            guiGraphics.blit(TEXTURE, x + 124, y + 30, 176, 0, 8, menu.getScaledProgress());
+            guiGraphics.blit(TEXTURE, x + 120, y + 30, 176, 0, 8, menu.getScaledProgress());
         }
     }
 

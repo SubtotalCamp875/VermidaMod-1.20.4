@@ -31,15 +31,15 @@ import org.jetbrains.annotations.Nullable;
 public class BloodCondensingStationBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(9);
 
-    private static final int INPUT_SLOT = 3;
-    private static final int OUTPUT_SLOT = 9;
-    private static final int FUEL_OUTPUT_SLOT = 6;
-    private static final int FUEL_INPUT_SLOT_1 = 1;
-    private static final int FUEL_INPUT_SLOT_2 = 2;
-    private static final int FUEL_INPUT_SLOT_3 = 4;
-    private static final int FUEL_INPUT_SLOT_4 = 5;
-    private static final int FUEL_INPUT_SLOT_5 = 7;
-    private static final int FUEL_INPUT_SLOT_6 = 8;
+    private static final int INPUT_SLOT = 2;
+    private static final int OUTPUT_SLOT = 8;
+    private static final int FUEL_OUTPUT_SLOT = 5;
+    private static final int FUEL_INPUT_SLOT_1 = 0;
+    private static final int FUEL_INPUT_SLOT_2 = 1;
+    private static final int FUEL_INPUT_SLOT_3 = 3;
+    private static final int FUEL_INPUT_SLOT_4 = 4;
+    private static final int FUEL_INPUT_SLOT_5 = 6;
+    private static final int FUEL_INPUT_SLOT_6 = 7;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
