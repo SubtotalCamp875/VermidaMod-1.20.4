@@ -1,7 +1,6 @@
 package net.subtotalcamp875.vermida_mod.screen;
 
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
@@ -12,7 +11,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 import net.subtotalcamp875.vermida_mod.block.ModBlocks;
 import net.subtotalcamp875.vermida_mod.block.entity.BloodCondensingStationBlockEntity;
-import org.jetbrains.annotations.Nullable;
+import net.subtotalcamp875.vermida_mod.screen.ModMenuTypes;
 
 public class BloodCondensingStationMenu extends AbstractContainerMenu {
     public final BloodCondensingStationBlockEntity blockEntity;
@@ -20,7 +19,7 @@ public class BloodCondensingStationMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public BloodCondensingStationMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(9));
+        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
     public BloodCondensingStationMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -46,7 +45,6 @@ public class BloodCondensingStationMenu extends AbstractContainerMenu {
         });
 
         addDataSlots(data);
-
     }
 
     public boolean isCrafting() {
@@ -55,8 +53,8 @@ public class BloodCondensingStationMenu extends AbstractContainerMenu {
 
     public int getScaledProgress() {
         int progress = this.data.get(0);
-        int maxProgress = this.data.get(1);
-        int progressArrowSize = 26;
+        int maxProgress = this.data.get(1);  // Max Progress
+        int progressArrowSize = 26; // This is the height in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
@@ -117,11 +115,10 @@ public class BloodCondensingStationMenu extends AbstractContainerMenu {
                 pPlayer, ModBlocks.BLOOD_CONDENSING_STATION_BLOCK.get());
     }
 
-
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 * 9, 8 + l * 18, 84 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
             }
         }
     }
