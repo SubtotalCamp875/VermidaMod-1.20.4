@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "vermida_mod:shaman_blood"
+    },
+    "C": {
+      "item": "vermida_mod:summoning_crystal_block"
+    },
+    "S": {
+      "item": "minecraft:smooth_stone"
+    }
+  },
+  "pattern": [
+    "CBC",
+    "S S"
+  ],
+  "result": {
+    "item": "vermida_mod:blood_condensing_station_block"
+  }
+}

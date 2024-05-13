@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "vermida_mod:summoning_crystal"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "vermida_mod:summoning_essence"
+  }
+}
