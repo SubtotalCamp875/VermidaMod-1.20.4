@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "vermida_mod:condensed_shaman_blood"
+    }
+  },
+  "result": {
+    "item": "vermida_mod:very_condensed_shaman_blood"
+  }
+}

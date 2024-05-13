@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "SCS",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:smooth_stone"
+    },
+    "C": {
+      "item": "vermida_mod:bronze_core"
+    },
+    "S": {
+      "item": "vermida_mod:summoning_crystal_block"
+    }
+  },
+  "result": {
+    "item": "vermida_mod:blood_condensing_station_block"
+  }
+}

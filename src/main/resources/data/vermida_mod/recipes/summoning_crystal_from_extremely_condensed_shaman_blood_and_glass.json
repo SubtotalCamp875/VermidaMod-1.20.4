@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " G ",
+    "GBG",
+    " G "
+  ],
+  "key": {
+    "B": {
+      "item": "vermida_mod:extremely_condensed_shaman_blood"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "vermida_mod:summoning_crystal",
+    "count": 2
+  }
+}
