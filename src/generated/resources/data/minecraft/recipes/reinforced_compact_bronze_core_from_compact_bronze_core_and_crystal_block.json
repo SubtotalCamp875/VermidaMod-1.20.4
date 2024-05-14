@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "vermida_mod:summoning_crystal_block"
+    },
+    "C": {
+      "item": "vermida_mod:compact_bronze_core"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "BCB",
+    "BBB"
+  ],
+  "result": {
+    "item": "vermida_mod:reinforced_compact_bronze_core"
+  }
+}

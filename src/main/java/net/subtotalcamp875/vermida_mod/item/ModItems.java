@@ -32,7 +32,12 @@ public class ModItems {
             ()-> new Item(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> BRONZE_CORE = ITEMS.register("bronze_core",
             ()-> new Item(new Item.Properties().stacksTo(1)));
-
+    public static final RegistryObject<Item> COMPACT_BRONZE_CORE = ITEMS.register("compact_bronze_core",
+            ()-> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> REINFORCED_BRONZE_CORE = ITEMS.register("reinforced_bronze_core",
+            ()-> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> REINFORCED_COMPACT_BRONZE_CORE = ITEMS.register("reinforced_compact_bronze_core",
+            ()-> new Item(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> MAGIC_HELMET = ITEMS.register("magic_helmet",
             ()-> new ArmorItem(ModArmorMaterials.SUMMONING_CRYSTAL, ArmorItem.Type.HELMET, new Item.Properties()));

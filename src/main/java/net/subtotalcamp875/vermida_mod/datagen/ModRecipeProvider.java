@@ -108,9 +108,52 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("CBC")
                 .pattern("CCC")
                 .define('C', Blocks.COPPER_BLOCK)
+                .define('B', ModItems.COMPACT_BRONZE_CORE.get())
+                .unlockedBy(getHasName(ModItems.BRONZE_CORE.get()), has(ModItems.BRONZE_CORE.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BRONZE_CORE.get())
+                .pattern(" C ")
+                .pattern("CBC")
+                .pattern(" C ")
+                .define('B', ModItems.EXTREMELY_CONDENSED_SHAMAN_BLOOD.get())
+                .define('C', Blocks.COPPER_BLOCK)
+                .unlockedBy(getHasName(ModItems.SHAMAN_BLOOD.get()), has(ModItems.SHAMAN_BLOOD.get()));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COMPACT_BRONZE_CORE.get())
+                .pattern("BBB")
+                .pattern("BBB")
+                .pattern("BBB")
                 .define('B', ModItems.BRONZE_CORE.get())
                 .unlockedBy(getHasName(ModItems.BRONZE_CORE.get()), has(ModItems.BRONZE_CORE.get()))
                 .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.REINFORCED_BRONZE_CORE.get())
+                .pattern("BBB")
+                .pattern("BCB")
+                .pattern("BBB")
+                .define('C', ModItems.BRONZE_CORE.get())
+                .define('B', ModBlocks.SUMMONING_CRYSTAL_BLOCK.get())
+                .unlockedBy(getHasName(ModItems.BRONZE_CORE.get()), has(ModItems.BRONZE_CORE.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.REINFORCED_COMPACT_BRONZE_CORE.get())
+                .pattern("BBB")
+                .pattern("BCB")
+                .pattern("BBB")
+                .define('C', ModItems.COMPACT_BRONZE_CORE.get())
+                .define('B', ModBlocks.SUMMONING_CRYSTAL_BLOCK.get())
+                .unlockedBy(getHasName(ModItems.BRONZE_CORE.get()), has(ModItems.BRONZE_CORE.get()))
+                .save(pRecipeOutput, "reinforced_compact_bronze_core_from_compact_bronze_core_and_crystal_block");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.REINFORCED_COMPACT_BRONZE_CORE.get())
+                .pattern("CCC")
+                .pattern("CRC")
+                .pattern("CCC")
+                .define('C', ModItems.BRONZE_CORE.get())
+                .define('R', ModItems.REINFORCED_BRONZE_CORE.get())
+                .unlockedBy(getHasName(ModItems.BRONZE_CORE.get()), has(ModItems.BRONZE_CORE.get()))
+                .save(pRecipeOutput, "reinforced_compact_bronze_core_from_bronze_core_and_reinforced_bronze_core");
 
 
 
@@ -159,7 +202,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BLOOD_CONDENSING_STATION_BLOCK.get())
                 .pattern("CBC")
                 .pattern("S S")
-                .define('B', ModItems.SHAMAN_BLOOD.get())
+                .define('B', ModItems.REINFORCED_COMPACT_BRONZE_CORE.get())
                 .define('C', ModBlocks.SUMMONING_CRYSTAL_BLOCK.get())
                 .define('S', Blocks.SMOOTH_STONE)
                 .unlockedBy(getHasName(ModItems.SHAMAN_BLOOD.get()), has(ModItems.SHAMAN_BLOOD.get()))

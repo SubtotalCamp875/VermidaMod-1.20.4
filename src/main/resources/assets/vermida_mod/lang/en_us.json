@@ -8,6 +8,9 @@
 
   "item.vermida_mod.bronze_key": "Bronze Key",
   "item.vermida_mod.bronze_core": "Bronze Core",
+  "item.vermida_mod.compact_bronze_core": "Compact Bronze Core",
+  "item.vermida_mod.reinforced_bronze_core": "Reinforced Bronze Core",
+  "item.vermida_mod.reinforced_compact_bronze_core": "Reinforced Compact Bronze Core",
   "block.vermida_mod.bronze_refiner_block": "Bronze Refiner",
   "block.vermida_mod.blood_condensing_station_block": "Blood Condensing Station",
 

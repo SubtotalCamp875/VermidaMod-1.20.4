@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "vermida_mod:item/reinforced_bronze_core"
+  }
+}

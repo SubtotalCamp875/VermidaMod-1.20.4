@@ -1,27 +1,27 @@
-[13May2024 19:54:23.964] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 12, --assetsDir, C:\Users\jaden_954j2qy\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, vermida_mod, --all, --output, C:\Users\jaden_954j2qy\Downloads\Documents\Vermida Mod\src\generated\resources, --existing, C:\Users\jaden_954j2qy\Downloads\Documents\Vermida Mod\src\main\resources]
-[13May2024 19:54:23.965] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 17.0.11+9
-[13May2024 19:54:23.966] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.1.2 starting: java version 17.0.11 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[13May2024 19:54:24.045] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
-[13May2024 19:54:24.125] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=jar:file:///C:/Users/jaden_954j2qy/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar!/ Service=ModLauncher Env=UNKNOWN
-[13May2024 19:54:24.825] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[13May2024 19:54:25.533] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\jaden_954j2qy\.gradle\caches\forge_gradle\assets, --assetIndex, 12, --mod, vermida_mod, --all, --output, C:\Users\jaden_954j2qy\Downloads\Documents\Vermida Mod\src\generated\resources, --existing, C:\Users\jaden_954j2qy\Downloads\Documents\Vermida Mod\src\main\resources]
-[13May2024 19:54:29.487] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 49.0.49, for MC 1.20.4 with MCP 20231207.112700
-[13May2024 19:54:29.489] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v49.0.49 Initialized
-[13May2024 19:54:29.530] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
-[13May2024 19:54:29.825] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [vermida_mod]
-[13May2024 19:54:29.902] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/jaden_954j2qy/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.4-49.0.49_mapped_parchment_2024.04.14-1.20.4/forge-1.20.4-49.0.49_mapped_parchment_2024.04.14-1.20.4-recomp.jar%230!/assets/.mcassetsroot' uses unexpected schema
-[13May2024 19:54:29.902] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/jaden_954j2qy/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.4-49.0.49_mapped_parchment_2024.04.14-1.20.4/forge-1.20.4-49.0.49_mapped_parchment_2024.04.14-1.20.4-recomp.jar%230!/data/.mcassetsroot' uses unexpected schema
-[13May2024 19:54:30.069] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[13May2024 19:54:30.138] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 68 ms
-[13May2024 19:54:30.139] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[13May2024 19:54:30.172] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 33 ms
-[13May2024 19:54:30.172] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: vermida_mod
-[13May2024 19:54:30.305] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: vermida_mod finished after 133 ms
-[13May2024 19:54:30.305] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: vermida_mod
-[13May2024 19:54:30.331] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: vermida_mod finished after 25 ms
-[13May2024 19:54:30.331] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id vermida_mod
-[13May2024 19:54:30.339] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id vermida_mod finished after 7 ms
-[13May2024 19:54:30.339] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id vermida_mod
-[13May2024 19:54:30.340] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id vermida_mod finished after 0 ms
-[13May2024 19:54:30.340] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 271 ms
-[13May2024 19:54:30.353] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 108, old count: 108, new count: 109, removed stale: 0, written: 1
+[14May2024 16:29:23.547] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 12, --assetsDir, C:\Users\jaden_954j2qy\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, vermida_mod, --all, --output, C:\Users\jaden_954j2qy\Downloads\Documents\Vermida Mod\src\generated\resources, --existing, C:\Users\jaden_954j2qy\Downloads\Documents\Vermida Mod\src\main\resources]
+[14May2024 16:29:23.549] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 17.0.11+9
+[14May2024 16:29:23.550] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.1.2 starting: java version 17.0.11 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[14May2024 16:29:23.621] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
+[14May2024 16:29:23.698] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=jar:file:///C:/Users/jaden_954j2qy/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar!/ Service=ModLauncher Env=UNKNOWN
+[14May2024 16:29:24.397] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[14May2024 16:29:25.152] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\jaden_954j2qy\.gradle\caches\forge_gradle\assets, --assetIndex, 12, --mod, vermida_mod, --all, --output, C:\Users\jaden_954j2qy\Downloads\Documents\Vermida Mod\src\generated\resources, --existing, C:\Users\jaden_954j2qy\Downloads\Documents\Vermida Mod\src\main\resources]
+[14May2024 16:29:29.169] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 49.0.49, for MC 1.20.4 with MCP 20231207.112700
+[14May2024 16:29:29.170] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v49.0.49 Initialized
+[14May2024 16:29:29.212] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
+[14May2024 16:29:29.484] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [vermida_mod]
+[14May2024 16:29:29.534] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/jaden_954j2qy/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.4-49.0.49_mapped_parchment_2024.04.14-1.20.4/forge-1.20.4-49.0.49_mapped_parchment_2024.04.14-1.20.4-recomp.jar%230!/assets/.mcassetsroot' uses unexpected schema
+[14May2024 16:29:29.534] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/jaden_954j2qy/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.4-49.0.49_mapped_parchment_2024.04.14-1.20.4/forge-1.20.4-49.0.49_mapped_parchment_2024.04.14-1.20.4-recomp.jar%230!/data/.mcassetsroot' uses unexpected schema
+[14May2024 16:29:29.649] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[14May2024 16:29:29.699] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 49 ms
+[14May2024 16:29:29.699] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[14May2024 16:29:29.719] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 21 ms
+[14May2024 16:29:29.719] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: vermida_mod
+[14May2024 16:29:29.870] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: vermida_mod finished after 150 ms
+[14May2024 16:29:29.871] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: vermida_mod
+[14May2024 16:29:29.893] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: vermida_mod finished after 22 ms
+[14May2024 16:29:29.894] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id vermida_mod
+[14May2024 16:29:29.901] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id vermida_mod finished after 7 ms
+[14May2024 16:29:29.901] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id vermida_mod
+[14May2024 16:29:29.902] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id vermida_mod finished after 0 ms
+[14May2024 16:29:29.902] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 253 ms
+[14May2024 16:29:29.913] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 119, old count: 119, new count: 120, removed stale: 0, written: 0

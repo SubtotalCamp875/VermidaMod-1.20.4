@@ -49,6 +49,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.BRONZE_KEY);
         simpleItem(ModItems.BRONZE_CORE);
+        simpleItem(ModItems.COMPACT_BRONZE_CORE);
+        simpleItem(ModItems.REINFORCED_BRONZE_CORE);
+        simpleItem(ModItems.REINFORCED_COMPACT_BRONZE_CORE);
 
         simpleItem(ModItems.MAGIC_HELMET);
         simpleItem(ModItems.MAGIC_CHESTPLATE);
