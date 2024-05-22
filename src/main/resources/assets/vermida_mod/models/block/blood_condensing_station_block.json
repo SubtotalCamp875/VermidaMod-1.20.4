@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "blood_condensing_station_texture",
-		"particle": "blood_condensing_station_texture"
+		"0": "vermida_mod:block/blood_condensing_station_texture",
+		"particle": "vermida_mod:block/blood_condensing_station_texture"
 	},
 	"elements": [
 		{
