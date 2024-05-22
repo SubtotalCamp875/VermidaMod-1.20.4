@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.CreativeModeTabRegistry;
@@ -86,6 +87,7 @@ public class VermidaMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.LEATHER_SUMMON.get(), LeatherSummonRenderer::new);
+            EntityRenderers.register(ModEntities.MAGIC_ORB.get(), ThrownItemRenderer::new);
 
             MenuScreens.register(ModMenuTypes.BLOOD_CONDENSING_STATION_MENU.get(), BloodCondensingStationScreen::new);
         }

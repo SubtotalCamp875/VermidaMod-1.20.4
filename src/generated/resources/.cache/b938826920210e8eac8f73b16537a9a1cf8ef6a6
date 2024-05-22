@@ -1,4 +1,4 @@
-// 1.20.4	2024-05-14T16:20:54.5957344	Item Models: vermida_mod
+// 1.20.4	2024-05-22T18:17:53.4545507	Item Models: vermida_mod
 424e879c5d292cc52ad13f6f105f721c0c459f1b assets/vermida_mod/models/item/bronze_core.json
 09e686755add6392f94a7cefc61e3014f596fbba assets/vermida_mod/models/item/bronze_key.json
 235a1033e685ccf15ea6c83afd763ac440fcf6c5 assets/vermida_mod/models/item/compact_bronze_core.json
@@ -50,6 +50,7 @@ f63805992bd5a7f664574d8bf7d302342f252913 assets/vermida_mod/models/item/magic_le
 6b0ec5751deb90cf5e4403366edeb947c36f8ff9 assets/vermida_mod/models/item/magic_leggings_netherite_trim.json
 d031d3d756841c458e4b2b35ded21fed553c5487 assets/vermida_mod/models/item/magic_leggings_quartz_trim.json
 c0e2cb87b9fdb4ec46bf94a5ae2d2f5b939895f1 assets/vermida_mod/models/item/magic_leggings_redstone_trim.json
+1e89b05c4072c9aeef87df653a7ef0049101b2d2 assets/vermida_mod/models/item/magic_orb.json
 f57c1f2694db9ef6511669d39aadd119654ce76b assets/vermida_mod/models/item/metal_detector.json
 8a50930a7b13d698c908811c1fe5febc853e2efa assets/vermida_mod/models/item/reinforced_bronze_core.json
 9210c1d456a1d2136272b434290f6085fbb42547 assets/vermida_mod/models/item/reinforced_compact_bronze_core.json

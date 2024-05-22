@@ -69,6 +69,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.MAGIC_CHESTPLATE);
         trimmedArmorItem(ModItems.MAGIC_LEGGINGS);
         trimmedArmorItem(ModItems.MAGIC_BOOTS);
+        simpleItem(ModItems.MAGIC_ORB);
 
         withExistingParent(ModItems.LEATHER_SUMMON_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
