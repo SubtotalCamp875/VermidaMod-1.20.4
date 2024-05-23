@@ -61,6 +61,7 @@ public class LeatherSummonModel<T extends Entity> extends HierarchicalModel<T> {
 
 		this.animateWalk(ModAnimationDefinisions.WALKING, limbSwing, limbSwingAmount, 2f, 2.5f);
 		this.animate(((LeatherSummonEntity) entity).idleAnimationState, ModAnimationDefinisions.IDLE, ageInTicks, 1f);
+		this.animate(((LeatherSummonEntity) entity).attackAnimationState, ModAnimationDefinisions.MELEE_LAUNCH_ATTACK, ageInTicks, 1f);
 	}
 
 

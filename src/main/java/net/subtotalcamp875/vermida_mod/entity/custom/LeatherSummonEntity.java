@@ -1,5 +1,8 @@
 package net.subtotalcamp875.vermida_mod.entity.custom;
 
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -13,9 +16,13 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.subtotalcamp875.vermida_mod.entity.ai.LeatherSummonAttackGoal;
 import org.jetbrains.annotations.Nullable;
 
 public class LeatherSummonEntity extends Monster {
+    public static final EntityDataAccessor<Boolean> ATTACKING =
+            SynchedEntityData.defineId(LeatherSummonEntity.class, EntityDataSerializers.BOOLEAN);
+
     public LeatherSummonEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.xpReward = 20;
@@ -23,6 +30,9 @@ public class LeatherSummonEntity extends Monster {
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
+
+    public final AnimationState attackAnimationState = new AnimationState();
+    public int attackAnimationTimeout = 0;
 
     @Override
     public void tick() {
@@ -33,8 +43,6 @@ public class LeatherSummonEntity extends Monster {
         }
     }
 
-
-
     private void setupAnimationStates() {
         if (this.idleAnimationTimeout <= 0) {
             this.idleAnimationTimeout = this.random.nextInt(40) + 80;
@@ -42,19 +50,43 @@ public class LeatherSummonEntity extends Monster {
         } else {
             --this.idleAnimationTimeout;
         }
+
+        if (this.isAttacking() && attackAnimationTimeout <= 0) {
+            attackAnimationTimeout = 30;
+            attackAnimationState.start(this.tickCount);
+        } else {
+            --this.attackAnimationTimeout;
+        }
+
+        if(!this.isAttacking()) {
+            attackAnimationState.stop();
+        }
     }
 
+    public void setAttacking(boolean attacking) {
+        this.entityData.set(ATTACKING, attacking);
+    }
+
+    public boolean isAttacking() {
+        return this.entityData.get(ATTACKING);
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(ATTACKING, false);
+    }
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0));
 
-        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0, false));
+        this.goalSelector.addGoal(1, new LeatherSummonAttackGoal(this, 1.0, true));
         this.goalSelector.addGoal(2, new MoveTowardsTargetGoal(this, 1.0, 32.0F));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 32.0F));
 
-        this.targetSelector.addGoal(1, new HurtByTargetGoal(this, new Class[0]));
+        this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Player.class, true));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
     }
