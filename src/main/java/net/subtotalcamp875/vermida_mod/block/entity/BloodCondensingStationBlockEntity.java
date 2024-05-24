@@ -70,7 +70,7 @@ public class BloodCondensingStationBlockEntity extends BlockEntity implements Me
 
             @Override
             public int getCount() {
-                return 9;
+                return 2;
             }
         };
     }
