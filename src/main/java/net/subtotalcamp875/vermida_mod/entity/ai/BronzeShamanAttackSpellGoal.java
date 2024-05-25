@@ -2,6 +2,7 @@ package net.subtotalcamp875.vermida_mod.entity.ai;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.subtotalcamp875.vermida_mod.entity.custom.BronzeShamanEntity;
 import net.subtotalcamp875.vermida_mod.entity.custom.MagicOrbProjectileEntity;
@@ -13,6 +14,7 @@ public class BronzeShamanAttackSpellGoal extends MeleeAttackGoal {
     private static final int ATTACK_RANGE = 15;
     private final BronzeShamanEntity entity;
     private int attackDelay = 20;
+    private int attackPhase = 40;
     private int ticksUntilNextAttack = 60;
     private boolean shouldCountTillNextAttack = false;
 
@@ -25,6 +27,7 @@ public class BronzeShamanAttackSpellGoal extends MeleeAttackGoal {
     public void start() {
         super.start();
         attackDelay = 20;
+        attackPhase = 40;
         ticksUntilNextAttack = 80;
     }
 
@@ -32,22 +35,6 @@ public class BronzeShamanAttackSpellGoal extends MeleeAttackGoal {
     public void stop() {
         this.entity.setAttacking(false);
         super.stop();
-    }
-
-    protected void resetAttackCooldown() {
-        this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay * 2);
-    }
-
-    protected boolean isTimeToAttack() {
-        return this.ticksUntilNextAttack <= 0;
-    }
-
-    protected boolean isTimeToStartAttackAnimation() {
-        return this.ticksUntilNextAttack <= attackDelay;
-    }
-
-    protected int getTicksUntilNextAttack() {
-        return this.ticksUntilNextAttack;
     }
 
     @Override
@@ -79,14 +66,34 @@ public class BronzeShamanAttackSpellGoal extends MeleeAttackGoal {
         return diffX + diffY + diffZ <= this.ATTACK_RANGE; // Make a private int called attack range (I have mine set to 5 and it works alright)
     }
 
+    protected void resetAttackCooldown() {
+        this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay * 4);
+    }
+
+
+    protected boolean isTimeToStartAttackAnimation() {
+        return this.ticksUntilNextAttack <= attackDelay;
+    }
+
+    protected boolean isTimeToAttack() {
+        return this.ticksUntilNextAttack <= 0;
+    }
+
     protected void performAttack(LivingEntity pEnemy) {
         this.resetAttackCooldown();
-        if (this.ticksUntilNextAttack <= 60) {
+
+        //if (this.ticksUntilNextAttack == 80 || this.ticksUntilNextAttack == 70 || this.ticksUntilNextAttack == 60 || this.ticksUntilNextAttack == 50) {
+        if (true) {
             MagicOrbProjectileEntity magicOrbProjectile = new MagicOrbProjectileEntity(this.mob.level(), this.mob, 0, pEnemy.getY(0.5D) - this.mob.getY(1.D), 0);
             magicOrbProjectile.setPos(magicOrbProjectile.getX(), this.mob.getY(0.5D) + 0.5D, magicOrbProjectile.getZ());
             this.mob.level().addFreshEntity(magicOrbProjectile);
         }
     }
+
+    protected int getTicksUntilNextAttack() {
+        return this.ticksUntilNextAttack;
+    }
+
 
     @Override
     public void tick() {

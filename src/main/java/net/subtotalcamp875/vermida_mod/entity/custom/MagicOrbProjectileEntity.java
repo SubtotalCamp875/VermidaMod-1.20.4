@@ -5,21 +5,14 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.projectile.Fireball;
-import net.minecraft.world.entity.projectile.SmallFireball;
-import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.BaseFireBlock;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.subtotalcamp875.vermida_mod.entity.ModEntities;
-import net.subtotalcamp875.vermida_mod.item.ModItems;
 
 public class MagicOrbProjectileEntity extends Fireball {
-    public MagicOrbProjectileEntity(EntityType<? extends SmallFireball> pEntityType, Level pLevel) {
+    public MagicOrbProjectileEntity(EntityType<? extends MagicOrbProjectileEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
@@ -52,7 +45,7 @@ public class MagicOrbProjectileEntity extends Fireball {
      * Returns {@code true} if other Entities should be prevented from moving through this Entity.
      */
     public boolean isPickable() {
-        return true;
+        return false;
     }
 
     /**

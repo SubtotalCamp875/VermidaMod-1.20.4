@@ -21,7 +21,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<BronzeShamanEntity>> BRONZE_SHAMAN =
             ENTITY_TYPE.register("bronze_shaman", () -> EntityType.Builder.of(BronzeShamanEntity::new, MobCategory.CREATURE)
-                    .sized(1f, 2f).build("bronze_shaman"));
+                    .sized(0.75f, 2.25f).build("bronze_shaman"));
 
     private static EntityType.EntityFactory<net.subtotalcamp875.vermida_mod.entity.custom.MagicOrbProjectileEntity> MagicOrbProjectileEntity;
     public static final RegistryObject<EntityType<MagicOrbProjectileEntity>> MAGIC_ORB =

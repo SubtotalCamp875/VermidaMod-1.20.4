@@ -24,9 +24,6 @@ public class BronzeShamanEntity extends Monster {
     public static final EntityDataAccessor<Boolean> ATTACKING =
             SynchedEntityData.defineId(BronzeShamanEntity.class, EntityDataSerializers.BOOLEAN);
 
-    public static final EntityDataAccessor<Boolean> HEALING =
-            SynchedEntityData.defineId(BronzeShamanEntity.class, EntityDataSerializers.BOOLEAN);
-
     public BronzeShamanEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.xpReward = 10;
@@ -36,9 +33,7 @@ public class BronzeShamanEntity extends Monster {
     private int idleAnimationTimeout = 0;
 
     public final AnimationState attackAnimationState = new AnimationState();
-    public final AnimationState healAnimationState = new AnimationState();
     public int attackAnimationTimeout = 0;
-    public int healAnimationTimeout = 0;
 
     @Override
     public void tick() {
@@ -58,35 +53,19 @@ public class BronzeShamanEntity extends Monster {
         }
 
         if (this.IsAttacking() && attackAnimationTimeout <= 0) {
-            attackAnimationTimeout = 30;
+            attackAnimationTimeout = 80;
             attackAnimationState.start(this.tickCount);
+            this.setPose(Pose.SHOOTING);
+            this.idleAnimationState.stop();
+            this.idleAnimationTimeout = this.random.nextInt(40) + 80;
         } else {
             --this.attackAnimationTimeout;
         }
 
         if(!this.IsAttacking()) {
             attackAnimationState.stop();
+            this.setPose(Pose.STANDING);
         }
-
-
-        if (this.IsHealing() && healAnimationTimeout <= 0) {
-            healAnimationTimeout = 30;
-            healAnimationState.start(this.tickCount);
-        } else {
-            --this.healAnimationTimeout;
-        }
-
-        if(!this.IsHealing()) {
-            healAnimationState.stop();
-        }
-    }
-
-    public void setAttacking(boolean attacking) {
-        this.entityData.set(ATTACKING, attacking);
-    }
-
-    public void setHealing(boolean healing) {
-        this.entityData.set(HEALING, healing);
     }
 
     @Override
@@ -101,18 +80,18 @@ public class BronzeShamanEntity extends Monster {
         this.walkAnimation.update(f, 0.2f);
     }
 
+    public void setAttacking(boolean attacking) {
+        this.entityData.set(ATTACKING, attacking);
+    }
+
     public boolean IsAttacking() {
         return this.entityData.get(ATTACKING);
-    }
-    public boolean IsHealing() {
-        return this.entityData.get(HEALING);
     }
 
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(ATTACKING, false);
-        this.entityData.define(HEALING, false);
     }
 
     @Override

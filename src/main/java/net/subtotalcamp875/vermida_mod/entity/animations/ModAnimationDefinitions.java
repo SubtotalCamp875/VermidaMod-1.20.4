@@ -8,7 +8,6 @@ import net.minecraft.client.animation.KeyframeAnimations;
 public class ModAnimationDefinitions {
 
 
-
 	public static final AnimationDefinition BRONZE_SHAMAN_IDLE = AnimationDefinition.Builder.withLength(4f).looping()
 			.addAnimation("left_arm",
 					new AnimationChannel(AnimationChannel.Targets.POSITION,
@@ -1935,7 +1934,7 @@ public class ModAnimationDefinitions {
 									AnimationChannel.Interpolations.LINEAR)))
 			.addAnimation("attacking",
 					new AnimationChannel(AnimationChannel.Targets.POSITION,
-							new Keyframe(0f, KeyframeAnimations.posVec(0f, 17f, 0f),
+							new Keyframe(0f, KeyframeAnimations.posVec(0f, -2f, 0f),
 									AnimationChannel.Interpolations.LINEAR)))
 			.addAnimation("attacking",
 					new AnimationChannel(AnimationChannel.Targets.ROTATION,
@@ -1944,8 +1943,11 @@ public class ModAnimationDefinitions {
 			.addAnimation("attacking",
 					new AnimationChannel(AnimationChannel.Targets.SCALE,
 							new Keyframe(0f, KeyframeAnimations.scaleVec(1f, 1f, 1f),
+									AnimationChannel.Interpolations.LINEAR)))
+			.addAnimation("healing_particles",
+					new AnimationChannel(AnimationChannel.Targets.POSITION,
+							new Keyframe(0f, KeyframeAnimations.posVec(0f, -23f, 0f),
 									AnimationChannel.Interpolations.LINEAR))).build();
-
 
 
 
