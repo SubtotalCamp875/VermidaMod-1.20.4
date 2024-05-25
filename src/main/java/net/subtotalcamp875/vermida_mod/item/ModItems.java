@@ -70,6 +70,10 @@ public class ModItems {
             ()-> new ForgeSpawnEggItem(ModEntities.LEATHER_SUMMON, 0x7e9680, 0xc5d1c5,
                     new Item.Properties()));
 
+    public static final RegistryObject<Item> BRONZE_SHAMAN_SPAWN_EGG = ITEMS.register("bronze_shaman_spawn_egg",
+            ()-> new ForgeSpawnEggItem(ModEntities.BRONZE_SHAMAN, 0x7e9680, 0xc5d1c5,
+                    new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

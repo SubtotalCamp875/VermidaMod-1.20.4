@@ -18,6 +18,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.subtotalcamp875.vermida_mod.block.ModBlocks;
 import net.subtotalcamp875.vermida_mod.block.entity.ModBlockEntities;
 import net.subtotalcamp875.vermida_mod.entity.ModEntities;
+import net.subtotalcamp875.vermida_mod.entity.client.BronzeShamanRenderer;
 import net.subtotalcamp875.vermida_mod.entity.client.LeatherSummonRenderer;
 import net.subtotalcamp875.vermida_mod.item.ModCreativeModeTabs;
 import net.subtotalcamp875.vermida_mod.item.ModItems;
@@ -67,6 +68,7 @@ public class VermidaMod {
             event.accept(ModItems.METAL_DETECTOR.get());
 
             event.accept(ModItems.LEATHER_SUMMON_SPAWN_EGG.get());
+            event.accept(ModItems.BRONZE_SHAMAN_SPAWN_EGG.get());
 
 
             event.accept(ModBlocks.SUMMONING_CRYSTAL_BLOCK.get());
@@ -85,6 +87,7 @@ public class VermidaMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.LEATHER_SUMMON.get(), LeatherSummonRenderer::new);
+            EntityRenderers.register(ModEntities.BRONZE_SHAMAN.get(), BronzeShamanRenderer::new);
             EntityRenderers.register(ModEntities.MAGIC_ORB.get(), ThrownItemRenderer::new);
 
             MenuScreens.register(ModMenuTypes.BLOOD_CONDENSING_STATION_MENU.get(), BloodCondensingStationScreen::new);

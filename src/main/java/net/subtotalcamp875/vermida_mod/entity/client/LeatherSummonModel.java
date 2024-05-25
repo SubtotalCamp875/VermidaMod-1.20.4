@@ -11,7 +11,8 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
-import net.subtotalcamp875.vermida_mod.entity.animations.ModAnimationDefinisions;
+import net.subtotalcamp875.vermida_mod.entity.animations.ModAnimationDefinitions;
+import net.subtotalcamp875.vermida_mod.entity.animations.ModAnimationDefinitions;
 import net.subtotalcamp875.vermida_mod.entity.custom.LeatherSummonEntity;
 
 public class LeatherSummonModel<T extends Entity> extends HierarchicalModel<T> {
@@ -59,9 +60,9 @@ public class LeatherSummonModel<T extends Entity> extends HierarchicalModel<T> {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.applyHeadRotation(netHeadYaw, headPitch, ageInTicks);
 
-		this.animateWalk(ModAnimationDefinisions.WALKING, limbSwing, limbSwingAmount, 2f, 2.5f);
-		this.animate(((LeatherSummonEntity) entity).idleAnimationState, ModAnimationDefinisions.IDLE, ageInTicks, 1f);
-		this.animate(((LeatherSummonEntity) entity).attackAnimationState, ModAnimationDefinisions.MELEE_LAUNCH_ATTACK, ageInTicks, 1f);
+		this.animateWalk(ModAnimationDefinitions.WALKING, limbSwing, limbSwingAmount, 2f, 2.5f);
+		this.animate(((LeatherSummonEntity) entity).idleAnimationState, ModAnimationDefinitions.IDLE, ageInTicks, 1f);
+		this.animate(((LeatherSummonEntity) entity).attackAnimationState, ModAnimationDefinitions.MELEE_LAUNCH_ATTACK, ageInTicks, 1f);
 	}
 
 

@@ -7,7 +7,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -61,6 +60,18 @@ public class LeatherSummonEntity extends Monster {
         if(!this.isAttacking()) {
             attackAnimationState.stop();
         }
+    }
+
+    @Override
+    protected void updateWalkAnimation(float pPartialTick) {
+        float f;
+        if(this.getPose() == Pose.STANDING) {
+            f = Math.min(pPartialTick * 6F, 1f);
+        } else {
+            f = 0f;
+        }
+
+        this.walkAnimation.update(f, 0.2f);
     }
 
     public void setAttacking(boolean attacking) {

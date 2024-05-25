@@ -12,6 +12,6 @@ public interface ModDamageTypes {
             ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("magic_damage"));
 
     static void bootstrap(BootstapContext<DamageType> pContext) {
-        pContext.register(MAGIC_DAMAGE, new DamageType("magicDamage", 0.1F, ModDamageEffects.MAGIC));
+        pContext.register(MAGIC_DAMAGE, new DamageType("magicDamage", 0.1F));
     }
 }
