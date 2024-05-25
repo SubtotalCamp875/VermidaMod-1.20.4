@@ -1,28 +1,53 @@
 package net.subtotalcamp875.vermida_mod.entity.ai;
 
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.subtotalcamp875.vermida_mod.entity.custom.LeatherSummonEntity;
+import net.subtotalcamp875.vermida_mod.entity.custom.BronzeShamanEntity;
+import net.subtotalcamp875.vermida_mod.entity.custom.MagicOrbProjectileEntity;
 
-public class LeatherSummonAttackGoal extends MeleeAttackGoal {
-    private static final int ATTACK_RANGE = 3;
-    private final LeatherSummonEntity entity;
-    private int attackDelay = 10;
-    private int ticksUntilNextAttack = 20;
+
+import java.util.EnumSet;
+
+public class BronzeShamanAttackSpellGoal extends MeleeAttackGoal {
+    private static final int ATTACK_RANGE = 15;
+    private final BronzeShamanEntity entity;
+    private int attackDelay = 20;
+    private int ticksUntilNextAttack = 60;
     private boolean shouldCountTillNextAttack = false;
 
-    public LeatherSummonAttackGoal(PathfinderMob pMob, double pSpeedModifier, boolean pFollowingTargetEvenIfNotSeen) {
+    public BronzeShamanAttackSpellGoal(PathfinderMob pMob, double pSpeedModifier, boolean pFollowingTargetEvenIfNotSeen) {
         super(pMob, pSpeedModifier, pFollowingTargetEvenIfNotSeen);
-        this.entity = ((LeatherSummonEntity) pMob);
+        this.entity = ((BronzeShamanEntity) pMob);
     }
 
     @Override
     public void start() {
         super.start();
-        attackDelay = 10;
-        ticksUntilNextAttack = 20;
+        attackDelay = 20;
+        ticksUntilNextAttack = 80;
+    }
+
+    @Override
+    public void stop() {
+        this.entity.setAttacking(false);
+        super.stop();
+    }
+
+    protected void resetAttackCooldown() {
+        this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay * 2);
+    }
+
+    protected boolean isTimeToAttack() {
+        return this.ticksUntilNextAttack <= 0;
+    }
+
+    protected boolean isTimeToStartAttackAnimation() {
+        return this.ticksUntilNextAttack <= attackDelay;
+    }
+
+    protected int getTicksUntilNextAttack() {
+        return this.ticksUntilNextAttack;
     }
 
     @Override
@@ -54,27 +79,13 @@ public class LeatherSummonAttackGoal extends MeleeAttackGoal {
         return diffX + diffY + diffZ <= this.ATTACK_RANGE; // Make a private int called attack range (I have mine set to 5 and it works alright)
     }
 
-    protected void resetAttackCooldown() {
-        this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay * 2);
-    }
-
-    protected boolean isTimeToAttack() {
-        return this.ticksUntilNextAttack <= 0;
-    }
-
-    protected boolean isTimeToStartAttackAnimation() {
-        return this.ticksUntilNextAttack <= attackDelay;
-    }
-
-    protected int getTicksUntilNextAttack() {
-        return this.ticksUntilNextAttack;
-    }
-
-
     protected void performAttack(LivingEntity pEnemy) {
         this.resetAttackCooldown();
-        this.mob.swing(InteractionHand.MAIN_HAND);
-        this.mob.doHurtTarget(pEnemy);
+        if (this.ticksUntilNextAttack <= 60) {
+            MagicOrbProjectileEntity magicOrbProjectile = new MagicOrbProjectileEntity(this.mob.level(), this.mob, 0, pEnemy.getY(0.5D) - this.mob.getY(1.D), 0);
+            magicOrbProjectile.setPos(magicOrbProjectile.getX(), this.mob.getY(0.5D) + 0.5D, magicOrbProjectile.getZ());
+            this.mob.level().addFreshEntity(magicOrbProjectile);
+        }
     }
 
     @Override
@@ -83,11 +94,5 @@ public class LeatherSummonAttackGoal extends MeleeAttackGoal {
         if(shouldCountTillNextAttack) {
             this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 1, 0);
         }
-    }
-
-    @Override
-    public void stop() {
-        entity.setAttacking(false);
-        super.stop();
     }
 }
