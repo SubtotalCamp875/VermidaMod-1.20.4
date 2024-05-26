@@ -5,6 +5,8 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -13,14 +15,18 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.SpellcasterIllager;
+import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.raid.Raider;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.subtotalcamp875.vermida_mod.entity.ai.BronzeShamanAttackSpellGoal;
+import net.subtotalcamp875.vermida_mod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.Range;
 
-public class BronzeShamanEntity extends Monster {
+public class BronzeShamanEntity extends Monster implements RangedAttackMob {
     public static final EntityDataAccessor<Boolean> ATTACKING =
             SynchedEntityData.defineId(BronzeShamanEntity.class, EntityDataSerializers.BOOLEAN);
 
@@ -99,7 +105,7 @@ public class BronzeShamanEntity extends Monster {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Player.class, 8.0F, 0.6D, 1.0D));
         //this.goalSelector.addGoal(4, new BronzeShamanHealSpellGoal());
-        this.goalSelector.addGoal(1, new BronzeShamanAttackSpellGoal(this, 1.0, true));
+        this.goalSelector.addGoal(1, new BronzeShamanAttackSpellGoal(this, 1.0, 80, 15));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 5.0F, 1.0F));
@@ -132,5 +138,14 @@ public class BronzeShamanEntity extends Monster {
     @Override
     protected SoundEvent getDeathSound() {
         return SoundEvents.EVOKER_DEATH;
+    }
+
+    protected void populateDefaultEquipmentSlots(RandomSource pRandom, DifficultyInstance pDifficulty) {
+        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MAGIC_ORB.get()));
+    }
+
+    @Override
+    public void performRangedAttack(LivingEntity pTarget, float pVelocity) {
+
     }
 }

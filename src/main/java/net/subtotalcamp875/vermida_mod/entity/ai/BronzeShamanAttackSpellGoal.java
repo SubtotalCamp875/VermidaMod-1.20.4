@@ -1,33 +1,31 @@
 package net.subtotalcamp875.vermida_mod.entity.ai;
 
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.PathfinderMob;
-import net.minecraft.world.entity.Pose;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
+import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.subtotalcamp875.vermida_mod.entity.custom.BronzeShamanEntity;
 import net.subtotalcamp875.vermida_mod.entity.custom.MagicOrbProjectileEntity;
 
-
-import java.util.EnumSet;
-
-public class BronzeShamanAttackSpellGoal extends MeleeAttackGoal {
+public class BronzeShamanAttackSpellGoal extends RangedAttackGoal {
     private static final int ATTACK_RANGE = 15;
     private final BronzeShamanEntity entity;
     private int attackDelay = 20;
-    private int attackPhase = 40;
+    private int attackTick = 0;
+
     private int ticksUntilNextAttack = 60;
     private boolean shouldCountTillNextAttack = false;
 
-    public BronzeShamanAttackSpellGoal(PathfinderMob pMob, double pSpeedModifier, boolean pFollowingTargetEvenIfNotSeen) {
-        super(pMob, pSpeedModifier, pFollowingTargetEvenIfNotSeen);
-        this.entity = ((BronzeShamanEntity) pMob);
+    public BronzeShamanAttackSpellGoal(RangedAttackMob pRangedAttackMob, double pSpeedModifier, int pAttackInterval, float pAttackRadius) {
+        super(pRangedAttackMob, pSpeedModifier, pAttackInterval, pAttackRadius);
+        this.entity = ((BronzeShamanEntity) pRangedAttackMob);
     }
 
     @Override
     public void start() {
         super.start();
         attackDelay = 20;
-        attackPhase = 40;
+        attackTick = 0;
         ticksUntilNextAttack = 80;
     }
 
@@ -37,7 +35,6 @@ public class BronzeShamanAttackSpellGoal extends MeleeAttackGoal {
         super.stop();
     }
 
-    @Override
     protected void checkAndPerformAttack(LivingEntity pEnemy) {
         if (isEnemyWithinAttackDistance(pEnemy)) {
             shouldCountTillNextAttack = true;
@@ -47,10 +44,11 @@ public class BronzeShamanAttackSpellGoal extends MeleeAttackGoal {
             }
 
             if(isTimeToAttack()) {
-                this.mob.getLookControl().setLookAt(pEnemy.getX(), pEnemy.getEyeY(), pEnemy.getZ());
-                performAttack(pEnemy);
+                this.entity.getLookControl().setLookAt(pEnemy.getX(), pEnemy.getEyeY(), pEnemy.getZ());
+                performRangedAttack(pEnemy);
             }
         } else {
+            attackTick = 0;
             resetAttackCooldown();
             shouldCountTillNextAttack = false;
             entity.setAttacking(false);
@@ -67,7 +65,7 @@ public class BronzeShamanAttackSpellGoal extends MeleeAttackGoal {
     }
 
     protected void resetAttackCooldown() {
-        this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay * 4);
+        this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay * 2);
     }
 
 
@@ -79,10 +77,23 @@ public class BronzeShamanAttackSpellGoal extends MeleeAttackGoal {
         return this.ticksUntilNextAttack <= 0;
     }
 
-    protected void performAttack(LivingEntity pEnemy) {
-        this.resetAttackCooldown();
-
-        //if (this.ticksUntilNextAttack == 80 || this.ticksUntilNextAttack == 70 || this.ticksUntilNextAttack == 60 || this.ticksUntilNextAttack == 50) {
+    protected void performRangedAttack(LivingEntity pEnemy) {
+        ++attackTick;
+        if (attackTick <= 40) {
+            if (attackTick == 40 || attackTick == 30 || attackTick == 20 || attackTick == 10) {
+                MagicOrbProjectileEntity magicOrbProjectile = new MagicOrbProjectileEntity(this.entity.level());
+                double d0 = pEnemy.getX() - this.entity.getX();
+                double d1 = pEnemy.getY(0.3333333333333333D) - magicOrbProjectile.getY();
+                double d2 = pEnemy.getZ() - this.entity.getZ();
+                double d3 = Math.sqrt(d0 * d0 + d2 * d2);
+                magicOrbProjectile.shoot(d0, d1 + d3 * (double) 0.2F, d2, 1.6F, (float) (14 - this.entity.level().getDifficulty().getId() * 4));
+                this.entity.playSound(SoundEvents.FIRECHARGE_USE, 1.0F, 1.0F / (this.entity.getRandom().nextFloat() * 0.4F + 0.8F));
+                this.entity.level().addFreshEntity(magicOrbProjectile);
+            }
+        } else {
+            this.resetAttackCooldown();
+            attackTick = 0;
+        }
     }
 
     protected int getTicksUntilNextAttack() {
@@ -96,5 +107,6 @@ public class BronzeShamanAttackSpellGoal extends MeleeAttackGoal {
         if(shouldCountTillNextAttack) {
             this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 1, 0);
         }
+        this.checkAndPerformAttack(this.entity.getTarget());
     }
 }
