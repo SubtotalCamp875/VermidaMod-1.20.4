@@ -36,6 +36,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MAGIC_CHESTPLATE.get());
                         output.accept(ModItems.MAGIC_LEGGINGS.get());
                         output.accept(ModItems.MAGIC_BOOTS.get());
+                        output.accept(ModItems.MAGIC_ORB.get());
 
                         output.accept(ModItems.SHAMAN_BLOOD.get());
                         output.accept(ModItems.SLIGHTLY_CONDENSED_SHAMAN_BLOOD.get());

@@ -83,11 +83,6 @@ public class BronzeShamanAttackSpellGoal extends MeleeAttackGoal {
         this.resetAttackCooldown();
 
         //if (this.ticksUntilNextAttack == 80 || this.ticksUntilNextAttack == 70 || this.ticksUntilNextAttack == 60 || this.ticksUntilNextAttack == 50) {
-        if (true) {
-            MagicOrbProjectileEntity magicOrbProjectile = new MagicOrbProjectileEntity(this.mob.level(), this.mob, 0, pEnemy.getY(0.5D) - this.mob.getY(1.D), 0);
-            magicOrbProjectile.setPos(magicOrbProjectile.getX(), this.mob.getY(0.5D) + 0.5D, magicOrbProjectile.getZ());
-            this.mob.level().addFreshEntity(magicOrbProjectile);
-        }
     }
 
     protected int getTicksUntilNextAttack() {

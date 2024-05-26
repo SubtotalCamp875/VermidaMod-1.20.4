@@ -9,6 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.subtotalcamp875.vermida_mod.VermidaMod;
 import net.subtotalcamp875.vermida_mod.entity.ModEntities;
+import net.subtotalcamp875.vermida_mod.item.custom.MagicOrbProjectileItem;
 import net.subtotalcamp875.vermida_mod.item.custom.MetalDetectorItem;
 
 public class ModItems {
@@ -47,7 +48,8 @@ public class ModItems {
             ()-> new ArmorItem(ModArmorMaterials.SUMMONING_CRYSTAL, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> MAGIC_BOOTS = ITEMS.register("magic_boots",
             ()-> new ArmorItem(ModArmorMaterials.SUMMONING_CRYSTAL, ArmorItem.Type.BOOTS, new Item.Properties()));
-
+    public static final RegistryObject<Item> MAGIC_ORB = ITEMS.register("magic_orb",
+            ()-> new MagicOrbProjectileItem(new Item.Properties()));
 
     public static final RegistryObject<Item> SHAMAN_BLOOD = ITEMS.register("shaman_blood",
             ()-> new Item(new Item.Properties().food(ModFoods.SHAMAN_BLOOD).stacksTo(16)));
