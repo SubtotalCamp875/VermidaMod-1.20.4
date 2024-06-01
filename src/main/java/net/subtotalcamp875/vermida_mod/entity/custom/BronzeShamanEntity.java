@@ -19,12 +19,10 @@ import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.subtotalcamp875.vermida_mod.entity.ai.BronzeShamanAttackSpellGoal;
 import net.subtotalcamp875.vermida_mod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.Range;
 
 public class BronzeShamanEntity extends Monster implements RangedAttackMob {
     public static final EntityDataAccessor<Boolean> ATTACKING =
@@ -32,6 +30,7 @@ public class BronzeShamanEntity extends Monster implements RangedAttackMob {
 
     public BronzeShamanEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+        this.isInvulnerableTo(damageSources().lightningBolt());
         this.xpReward = 10;
     }
 
@@ -110,8 +109,8 @@ public class BronzeShamanEntity extends Monster implements RangedAttackMob {
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 5.0F, 1.0F));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Mob.class, 8.0F));
-        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, Raider.class)).setAlertOthers());
-        this.targetSelector.addGoal(2, (new NearestAttackableTargetGoal<>(this, Player.class, true)).setUnseenMemoryTicks(300));
+        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers());
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, false));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
