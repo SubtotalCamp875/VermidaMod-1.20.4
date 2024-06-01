@@ -80,6 +80,9 @@ public class ModItems {
     public static final RegistryObject<Item> BRONZE_SHAMAN_CAMP_AMBIENCE_MUSIC_DISC = ITEMS.register("bronze_shaman_camp_ambience_music_disc",
             () -> new RecordItem(6, ModSounds.BRONZE_SHAMAN_CAMP_AMBIENCE, new Item.Properties().stacksTo(1), 3300));
 
+    public static final RegistryObject<Item> SCROLL = ITEMS.register("scroll",
+            ()-> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

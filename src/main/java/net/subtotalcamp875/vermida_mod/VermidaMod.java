@@ -71,6 +71,7 @@ public class VermidaMod {
 
             event.accept(ModItems.LEATHER_SUMMON_SPAWN_EGG.get());
             event.accept(ModItems.BRONZE_SHAMAN_SPAWN_EGG.get());
+            event.accept(ModItems.SCROLL.get());
 
 
             event.accept(ModBlocks.SUMMONING_CRYSTAL_BLOCK.get());

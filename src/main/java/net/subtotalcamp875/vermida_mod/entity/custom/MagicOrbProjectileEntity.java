@@ -37,6 +37,5 @@ public class MagicOrbProjectileEntity extends ThrowableItemProjectile {
         Entity entity1 = this.getOwner();
         LivingEntity livingentity = entity1 instanceof LivingEntity ? (LivingEntity)entity1 : null;
         boolean flag = entity.hurt(damageSources().lightningBolt(), 10.0F);
-
     }
 }
