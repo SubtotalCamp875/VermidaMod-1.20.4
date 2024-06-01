@@ -34,8 +34,5 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.BLOOD_CONDENSING_STATION_BLOCK.get()
 
                 );
-
-
-
     }
 }

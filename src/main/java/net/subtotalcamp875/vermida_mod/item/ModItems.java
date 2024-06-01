@@ -77,6 +77,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> ECHOS_OF_SUMMONS_MUSIC_DISC = ITEMS.register("echos_of_summons_music_disc",
             () -> new RecordItem(6, ModSounds.ECHOS_OF_SUMMONS, new Item.Properties().stacksTo(1), 2120));
+    public static final RegistryObject<Item> BRONZE_SHAMAN_CAMP_AMBIENCE_MUSIC_DISC = ITEMS.register("bronze_shaman_camp_ambience_music_disc",
+            () -> new RecordItem(6, ModSounds.BRONZE_SHAMAN_CAMP_AMBIENCE, new Item.Properties().stacksTo(1), 3300));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

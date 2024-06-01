@@ -14,6 +14,7 @@ public class ModSounds {
             DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, VermidaMod.MOD_ID);
 
     public static final RegistryObject<SoundEvent> ECHOS_OF_SUMMONS = registerSoundEvents("echos_of_summons");
+    public static final RegistryObject<SoundEvent> BRONZE_SHAMAN_CAMP_AMBIENCE = registerSoundEvents("bronze_shaman_camp_ambience");
 
     private static RegistryObject<SoundEvent> registerSoundEvents(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(VermidaMod.MOD_ID, name)));

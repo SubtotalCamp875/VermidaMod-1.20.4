@@ -6,5 +6,13 @@
         "stream": true
       }
     ]
+  },
+  "bronze_shaman_camp_ambience": {
+    "sounds": [
+      {
+        "name": "vermida_mod:bronze_shaman_camp_ambience",
+        "stream": true
+      }
+    ]
   }
 }

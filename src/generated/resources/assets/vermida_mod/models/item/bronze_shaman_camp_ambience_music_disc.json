@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "vermida_mod:item/bronze_shaman_camp_ambience_music_disc"
+  }
+}
