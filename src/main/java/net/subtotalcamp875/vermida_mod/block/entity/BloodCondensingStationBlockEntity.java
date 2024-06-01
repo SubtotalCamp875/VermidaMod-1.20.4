@@ -1,7 +1,10 @@
 package net.subtotalcamp875.vermida_mod.block.entity;
 
+import com.ibm.icu.impl.TextTrieMap;
+import com.sun.tools.jconsole.JConsoleContext;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -22,6 +25,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.subtotalcamp875.vermida_mod.item.ModItems;
@@ -136,12 +140,27 @@ public class BloodCondensingStationBlockEntity extends BlockEntity implements Me
             setChanged(pLevel, pPos, pState);
 
             if(hasProgressFinished()) {
-                craftItem();
+                craftItem(craftingResult());
                 resetProgress();
             }
         } else {
             resetProgress();
         }
+    }
+
+    private Item craftingResult() {
+        if (this.itemHandler.getStackInSlot(INPUT_SLOT).getItem() == ModItems.SHAMAN_BLOOD.get()) {
+            return ModItems.SLIGHTLY_CONDENSED_SHAMAN_BLOOD.get();
+        } else if (this.itemHandler.getStackInSlot(INPUT_SLOT).getItem() == ModItems.SLIGHTLY_CONDENSED_SHAMAN_BLOOD.get()) {
+            return ModItems.LIGHTLY_CONDENSED_SHAMAN_BLOOD.get();
+        } else if (this.itemHandler.getStackInSlot(INPUT_SLOT).getItem() == ModItems.LIGHTLY_CONDENSED_SHAMAN_BLOOD.get()) {
+            return ModItems.CONDENSED_SHAMAN_BLOOD.get();
+        } else if (this.itemHandler.getStackInSlot(INPUT_SLOT).getItem() == ModItems.CONDENSED_SHAMAN_BLOOD.get()) {
+            return ModItems.VERY_CONDENSED_SHAMAN_BLOOD.get();
+        } else if (this.itemHandler.getStackInSlot(INPUT_SLOT).getItem() == ModItems.VERY_CONDENSED_SHAMAN_BLOOD.get()) {
+            return ModItems.EXTREMELY_CONDENSED_SHAMAN_BLOOD.get();
+        }
+        return null;
     }
 
     private void resetProgress() {
@@ -159,11 +178,18 @@ public class BloodCondensingStationBlockEntity extends BlockEntity implements Me
 
 
     private boolean hasRecipe() {
-        boolean hasCraftingItem = this.itemHandler.getStackInSlot(INPUT_SLOT).getItem() == ModItems.SHAMAN_BLOOD.get() && hasFuel();
 
-        ItemStack result = new ItemStack(ModItems.SLIGHTLY_CONDENSED_SHAMAN_BLOOD.get());
+        boolean hasCraftingItem = true;
+        
+        ItemStack result = null;
 
-        return hasCraftingItem && canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+        if (craftingResult() != null) {
+            result = new ItemStack(craftingResult());
+        } else {
+            hasCraftingItem = false;
+        }
+
+        return hasCraftingItem && canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem()) && hasFuel();
     }
 
     private boolean hasFuel() {
@@ -187,8 +213,9 @@ public class BloodCondensingStationBlockEntity extends BlockEntity implements Me
     }
 
 
-    private void craftItem() {
-        ItemStack result = new ItemStack(ModItems.SLIGHTLY_CONDENSED_SHAMAN_BLOOD.get(), 1);
+    private void craftItem(Item pItem) {
+        ItemStack result = new ItemStack(pItem, 1);
+
         ItemStack fuelOutput = new ItemStack(Items.GLASS_BOTTLE, 6);
         this.itemHandler.extractItem(INPUT_SLOT, 1, false);
         this.itemHandler.extractItem(FUEL_INPUT_SLOT_1, 1, false);
