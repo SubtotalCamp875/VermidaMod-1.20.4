@@ -24,6 +24,7 @@ import net.subtotalcamp875.vermida_mod.item.ModCreativeModeTabs;
 import net.subtotalcamp875.vermida_mod.item.ModItems;
 import net.subtotalcamp875.vermida_mod.screen.BloodCondensingStationScreen;
 import net.subtotalcamp875.vermida_mod.screen.ModMenuTypes;
+import net.subtotalcamp875.vermida_mod.sound.ModSounds;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -44,6 +45,7 @@ public class VermidaMod {
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModSounds.register(modEventBus);
 
 
         modEventBus.addListener(this::commonSetup);

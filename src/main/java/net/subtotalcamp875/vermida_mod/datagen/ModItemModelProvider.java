@@ -70,6 +70,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.MAGIC_LEGGINGS);
         trimmedArmorItem(ModItems.MAGIC_BOOTS);
         simpleItem(ModItems.MAGIC_ORB);
+        simpleItem(ModItems.ECHOS_OF_SUMMONS_MUSIC_DISC);
 
         withExistingParent(ModItems.LEATHER_SUMMON_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.BRONZE_SHAMAN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));

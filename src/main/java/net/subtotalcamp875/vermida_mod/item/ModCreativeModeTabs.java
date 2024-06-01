@@ -48,6 +48,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.LEATHER_SUMMON_SPAWN_EGG.get());
                         output.accept(ModItems.BRONZE_SHAMAN_SPAWN_EGG.get());
+                        output.accept(ModItems.ECHOS_OF_SUMMONS_MUSIC_DISC.get());
 
                     })
                     .build());

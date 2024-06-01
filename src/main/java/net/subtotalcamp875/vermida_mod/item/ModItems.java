@@ -2,6 +2,7 @@ package net.subtotalcamp875.vermida_mod.item;
 
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.RecordItem;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -11,6 +12,7 @@ import net.subtotalcamp875.vermida_mod.VermidaMod;
 import net.subtotalcamp875.vermida_mod.entity.ModEntities;
 import net.subtotalcamp875.vermida_mod.item.custom.MagicOrbProjectileItem;
 import net.subtotalcamp875.vermida_mod.item.custom.MetalDetectorItem;
+import net.subtotalcamp875.vermida_mod.sound.ModSounds;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -72,6 +74,9 @@ public class ModItems {
     public static final RegistryObject<Item> BRONZE_SHAMAN_SPAWN_EGG = ITEMS.register("bronze_shaman_spawn_egg",
             ()-> new ForgeSpawnEggItem(ModEntities.BRONZE_SHAMAN, 0x7e9680, 0xc5d1c5,
                     new Item.Properties()));
+
+    public static final RegistryObject<Item> ECHOS_OF_SUMMONS_MUSIC_DISC = ITEMS.register("echos_of_summons_music_disc",
+            () -> new RecordItem(6, ModSounds.ECHOS_OF_SUMMONS, new Item.Properties().stacksTo(1), 2120));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

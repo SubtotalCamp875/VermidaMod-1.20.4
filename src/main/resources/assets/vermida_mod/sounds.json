@@ -1,0 +1,10 @@
+{
+  "echos_of_summons": {
+    "sounds": [
+      {
+        "name": "vermida_mod:echos_of_summons",
+        "stream": true
+      }
+    ]
+  }
+}
