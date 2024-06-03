@@ -17,6 +17,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.subtotalcamp875.vermida_mod.block.ModBlocks;
 import net.subtotalcamp875.vermida_mod.block.entity.ModBlockEntities;
+import net.subtotalcamp875.vermida_mod.enchantment.ModEnchantments;
 import net.subtotalcamp875.vermida_mod.entity.ModEntities;
 import net.subtotalcamp875.vermida_mod.entity.client.BronzeShamanRenderer;
 import net.subtotalcamp875.vermida_mod.entity.client.LeatherSummonRenderer;
@@ -46,6 +47,7 @@ public class VermidaMod {
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModSounds.register(modEventBus);
+        ModEnchantments.register(modEventBus);
 
 
         modEventBus.addListener(this::commonSetup);

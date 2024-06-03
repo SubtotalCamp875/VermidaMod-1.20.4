@@ -9,7 +9,7 @@ import net.subtotalcamp875.vermida_mod.entity.custom.MagicOrbProjectileEntity;
 import org.apache.commons.lang3.ObjectUtils;
 
 public class BronzeShamanAttackSpellGoal extends RangedAttackGoal {
-    private static final int ATTACK_RANGE = 25;
+    private static final int ATTACK_RANGE = 35;
     private final BronzeShamanEntity entity;
     private int attackDelay = 20;
     private int attackTick = 0;

@@ -135,7 +135,7 @@ public class BronzeShamanEntity extends Monster implements RangedAttackMob {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, 2.0F, 2.0D, 2.0D));
         this.goalSelector.addGoal(2, new BronzeShamanHealSpellGoal(this, 1.0, 80, 25));
-        this.goalSelector.addGoal(3, new BronzeShamanAttackSpellGoal(this, 1.0, 80, 25));
+        this.goalSelector.addGoal(3, new BronzeShamanAttackSpellGoal(this, 1.0, 80, 35));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 5.0F, 1.0F));

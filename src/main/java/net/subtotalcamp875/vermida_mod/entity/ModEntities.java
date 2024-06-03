@@ -25,7 +25,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<MagicOrbProjectileEntity>> MAGIC_ORB =
             ENTITY_TYPE.register("magic_orb", () -> EntityType.Builder.<MagicOrbProjectileEntity>of(MagicOrbProjectileEntity::new, MobCategory.MISC)
-                    .sized(0.5f, 0.5f).build("magic_orb"));
+                    .sized(0.25f, 0.25f).build("magic_orb"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPE.register(eventBus);
