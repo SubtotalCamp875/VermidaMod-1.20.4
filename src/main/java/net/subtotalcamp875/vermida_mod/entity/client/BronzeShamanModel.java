@@ -213,6 +213,7 @@ public class BronzeShamanModel<T extends Entity> extends HierarchicalModel<T> {
 		this.animateWalk(ModAnimationDefinitions.BRONZE_SHAMAN_WALKING, limbSwing, limbSwingAmount, 2f, 2.5f);
 		this.animate(((BronzeShamanEntity) entity).idleAnimationState, ModAnimationDefinitions.BRONZE_SHAMAN_IDLE, ageInTicks, 1f);
 		this.animate(((BronzeShamanEntity) entity).attackAnimationState, ModAnimationDefinitions.BRONZE_SHAMAN_ATTACKING, ageInTicks, 1f);
+		this.animate(((BronzeShamanEntity) entity).healAnimationState, ModAnimationDefinitions.BRONZE_SHAMAN_HEALING, ageInTicks, 1f);
 	}
 
 	private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {

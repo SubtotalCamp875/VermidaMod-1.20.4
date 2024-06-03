@@ -6,6 +6,7 @@ import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.subtotalcamp875.vermida_mod.entity.custom.BronzeShamanEntity;
 import net.subtotalcamp875.vermida_mod.entity.custom.MagicOrbProjectileEntity;
+import org.apache.commons.lang3.ObjectUtils;
 
 public class BronzeShamanAttackSpellGoal extends RangedAttackGoal {
     private static final int ATTACK_RANGE = 25;
@@ -13,7 +14,7 @@ public class BronzeShamanAttackSpellGoal extends RangedAttackGoal {
     private int attackDelay = 20;
     private int attackTick = 0;
 
-    private int ticksUntilNextAttack = 60;
+    private int ticksUntilNextAttack = 80;
     private boolean shouldCountTillNextAttack = false;
 
     public BronzeShamanAttackSpellGoal(RangedAttackMob pRangedAttackMob, double pSpeedModifier, int pAttackInterval, float pAttackRadius) {
@@ -57,6 +58,9 @@ public class BronzeShamanAttackSpellGoal extends RangedAttackGoal {
     }
 
     private boolean isEnemyWithinAttackDistance(LivingEntity pEnemy) {
+        if (pEnemy == null) {
+            return false;
+        }
         int diffX = Math.abs(pEnemy.getBlockX() - entity.getBlockX());
         int diffY = Math.abs(pEnemy.getBlockY() - entity.getBlockY());;
         int diffZ = Math.abs(pEnemy.getBlockZ() - entity.getBlockZ());;
@@ -86,7 +90,7 @@ public class BronzeShamanAttackSpellGoal extends RangedAttackGoal {
                 double d1 = pEnemy.getY(0.3333333333333333D) - magicOrbProjectile.getY();
                 double d2 = pEnemy.getZ() - this.entity.getZ();
                 double d3 = Math.sqrt(d0 * d0 + d2 * d2);
-                magicOrbProjectile.shoot(d0, d1 + d3 * (double) 0.1F, d2, 1.6F, (float) (14 - this.entity.level().getDifficulty().getId() * 4));
+                magicOrbProjectile.shoot(d0, d1 + d3 * (double) 0.2F, d2, 1.6F, (float) (14 - this.entity.level().getDifficulty().getId() * 4));
                 this.entity.playSound(SoundEvents.FIRECHARGE_USE, 1.0F, 1.0F / (this.entity.getRandom().nextFloat() * 0.4F + 0.8F));
                 this.entity.level().addFreshEntity(magicOrbProjectile);
             }
