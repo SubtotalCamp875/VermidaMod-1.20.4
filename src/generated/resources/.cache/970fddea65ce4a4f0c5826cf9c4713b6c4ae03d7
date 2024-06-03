@@ -1,8 +1,11 @@
-// 1.20.4	2024-05-13T19:54:30.3403701	Block States: vermida_mod
+// 1.20.4	2024-06-03T12:05:25.4433797	Block States: vermida_mod
 a91823b93ab45b5fba128c81cadf0d371ebcb7eb assets/vermida_mod/blockstates/blood_condensing_station_block.json
 6c7e0ad3ff738f6f76d2f552d66dbd5235d75a06 assets/vermida_mod/blockstates/bronze_refiner_block.json
+2bd870c734bdd6983c4e2dbc3205fab399065baf assets/vermida_mod/blockstates/seal_breaker_block.json
 3cb5a5c8e82ec11f4f9ac0d95b3b6efd889a69ec assets/vermida_mod/blockstates/summoning_crystal_block.json
 1ae160489ba30c1232df2f20a5abb193e0a07028 assets/vermida_mod/models/block/bronze_refiner_block.json
+a41831cb12ab9f666ac64981122d5b5303424c15 assets/vermida_mod/models/block/seal_breaker_block.json
 940e2b026a79df42aabf82858b0349cb01f43446 assets/vermida_mod/models/block/summoning_crystal_block.json
 629909dace79e9b4830b017586282af72e815992 assets/vermida_mod/models/item/bronze_refiner_block.json
+b276f31b1dd921c719b90ecabb3faa666140eb94 assets/vermida_mod/models/item/seal_breaker_block.json
 0100ed3eca86578fc56e2890745222387793719d assets/vermida_mod/models/item/summoning_crystal_block.json

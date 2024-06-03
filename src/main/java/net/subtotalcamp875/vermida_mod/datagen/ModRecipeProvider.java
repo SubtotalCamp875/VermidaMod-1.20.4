@@ -201,9 +201,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BLOOD_CONDENSING_STATION_BLOCK.get())
                 .pattern("CBC")
-                .pattern("S S")
-                .define('B', ModItems.REINFORCED_COMPACT_BRONZE_CORE.get())
-                .define('C', ModBlocks.SUMMONING_CRYSTAL_BLOCK.get())
+                .pattern("S#S")
+                .define('B', ModItems.COMPACT_BRONZE_CORE.get())
+                .define('C', ModItems.SUMMONING_CRYSTAL.get())
+                .define('#', ModItems.SHAMAN_BLOOD.get())
                 .define('S', Blocks.SMOOTH_STONE)
                 .unlockedBy(getHasName(ModItems.SHAMAN_BLOOD.get()), has(ModItems.SHAMAN_BLOOD.get()))
                 .save(pRecipeOutput);

@@ -40,13 +40,13 @@ public class MagicResistanceEnchantment extends Enchantment {
     @Override
     public boolean checkCompatibility(Enchantment pEnch) {
         if (pEnch instanceof MagicResistanceEnchantment magicResistanceEnchantment) {
-            if (this.type == magicResistanceEnchantment.type.MAGIC) {
-                return true;
-            } else {
+            if (this.type == magicResistanceEnchantment.type) {
                 return false;
+            } else {
+                return this.type == MagicResistanceEnchantment.Type.MAGIC;
             }
         } else {
-            return false;
+            return super.checkCompatibility(pEnch);
         }
     }
 

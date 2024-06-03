@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "vermida_mod:seal_breaker_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "vermida_mod:blocks/seal_breaker_block"
+}

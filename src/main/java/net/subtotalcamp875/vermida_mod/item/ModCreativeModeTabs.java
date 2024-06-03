@@ -31,6 +31,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.REINFORCED_BRONZE_CORE.get());
                         output.accept(ModItems.REINFORCED_COMPACT_BRONZE_CORE.get());
                         output.accept(ModBlocks.BRONZE_REFINER_BLOCK.get());
+                        output.accept(ModBlocks.SEAL_BREAKER_BLOCK.get());
 
                         output.accept(ModItems.MAGIC_HELMET.get());
                         output.accept(ModItems.MAGIC_CHESTPLATE.get());

@@ -23,7 +23,7 @@ public class LeatherSummonRenderer extends MobRenderer<LeatherSummonEntity, Leat
 
     @Override
     public void render(LeatherSummonEntity pEntity, float pEntityYaw, float pPartialTicks, PoseStack pMatrixStack, MultiBufferSource pBuffer, int pPackedLight) {
-        pMatrixStack.scale(3f,3f,3f);
+        pMatrixStack.scale(1.5f,1.5f,1.5f);
 
         super.render(pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
     }

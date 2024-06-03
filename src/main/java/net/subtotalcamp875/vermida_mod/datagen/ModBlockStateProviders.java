@@ -18,6 +18,7 @@ public class ModBlockStateProviders extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.BRONZE_REFINER_BLOCK);
         blockWithItem(ModBlocks.SUMMONING_CRYSTAL_BLOCK);
+        blockWithItem(ModBlocks.SEAL_BREAKER_BLOCK);
 
         simpleBlock(ModBlocks.BLOOD_CONDENSING_STATION_BLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/blood_condensing_station_block")));

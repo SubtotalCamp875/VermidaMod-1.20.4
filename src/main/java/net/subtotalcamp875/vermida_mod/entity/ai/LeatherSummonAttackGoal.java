@@ -7,7 +7,7 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.subtotalcamp875.vermida_mod.entity.custom.LeatherSummonEntity;
 
 public class LeatherSummonAttackGoal extends MeleeAttackGoal {
-    private static final int ATTACK_RANGE = 3;
+    private static final int ATTACK_RANGE = 4;
     private final LeatherSummonEntity entity;
     private int attackDelay = 10;
     private int ticksUntilNextAttack = 20;
@@ -55,7 +55,7 @@ public class LeatherSummonAttackGoal extends MeleeAttackGoal {
     }
 
     protected void resetAttackCooldown() {
-        this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay * 2);
+        this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay * 3);
     }
 
     protected boolean isTimeToAttack() {

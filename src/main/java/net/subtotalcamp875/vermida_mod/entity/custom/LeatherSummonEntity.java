@@ -14,6 +14,8 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.level.Level;
 import net.subtotalcamp875.vermida_mod.entity.ai.LeatherSummonAttackGoal;
 import org.jetbrains.annotations.Nullable;
@@ -24,6 +26,7 @@ public class LeatherSummonEntity extends Monster {
 
     public LeatherSummonEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+        this.isInvulnerableTo(damageSources().lightningBolt());
         this.xpReward = 20;
     }
 
@@ -104,9 +107,9 @@ public class LeatherSummonEntity extends Monster {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createLivingAttributes()
-                .add(Attributes.MAX_HEALTH, 200.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.4)
-                .add(Attributes.ATTACK_DAMAGE, 30.0)
+                .add(Attributes.MAX_HEALTH, 500.0)
+                .add(Attributes.MOVEMENT_SPEED, 0.6)
+                .add(Attributes.ATTACK_DAMAGE, 10.0)
                 .add(Attributes.ATTACK_KNOCKBACK, 7.0)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.2)
                 .add(Attributes.ATTACK_SPEED, 0.2)

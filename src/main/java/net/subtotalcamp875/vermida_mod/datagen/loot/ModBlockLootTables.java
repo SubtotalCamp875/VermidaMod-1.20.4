@@ -25,6 +25,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.dropSelf(ModBlocks.SUMMONING_CRYSTAL_BLOCK.get());
+        this.dropSelf(ModBlocks.SEAL_BREAKER_BLOCK.get());
         this.dropSelf(ModBlocks.BRONZE_REFINER_BLOCK.get());
         this.dropSelf(ModBlocks.BLOOD_CONDENSING_STATION_BLOCK.get());
     }

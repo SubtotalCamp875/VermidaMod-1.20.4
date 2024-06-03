@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "vermida_mod:block/seal_breaker_block"
+  }
+}
