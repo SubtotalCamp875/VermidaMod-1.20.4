@@ -3,6 +3,7 @@ package net.subtotalcamp875.vermida_mod.datagen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.MinecartItem;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
@@ -42,7 +43,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.SUMMONING_ESSENCE.get()), has(ModItems.SUMMONING_ESSENCE.get()))
                 .save(pRecipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUMMONING_CRYSTAL.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUMMONING_CRYSTAL.get(), 2)
                 .pattern("GEG")
                 .pattern("EBE")
                 .pattern("GEG")
@@ -52,7 +53,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.SUMMONING_CRYSTAL.get()), has(ModItems.SUMMONING_CRYSTAL.get()))
                 .save(pRecipeOutput, "summoning_crystal_from_essence_and_blood");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUMMONING_CRYSTAL.get(), 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUMMONING_CRYSTAL.get(), 8)
                 .pattern(" G ")
                 .pattern("GBG")
                 .pattern(" G ")
@@ -60,6 +61,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('G', Blocks.GLASS)
                 .unlockedBy(getHasName(ModItems.SUMMONING_CRYSTAL.get()), has(ModItems.SUMMONING_CRYSTAL.get()))
                 .save(pRecipeOutput, "summoning_crystal_from_glass_and_blood");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GLASS_DUST.get(), 1)
+                .pattern(" BB")
+                .pattern(" BB")
+                .define('B', Items.GLASS_BOTTLE)
+                .unlockedBy(getHasName(ModItems.SHAMAN_BLOOD.get()), has(ModItems.SHAMAN_BLOOD.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.GLASS, 1)
+                .pattern(" BB")
+                .pattern(" BB")
+                .define('B', ModItems.GLASS_DUST.get())
+                .unlockedBy(getHasName(ModItems.GLASS_DUST.get()), has(ModItems.GLASS_DUST.get()))
+                .save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUMMONING_CRYSTAL.get())
                 .pattern("EEE")

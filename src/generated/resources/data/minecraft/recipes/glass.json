@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "vermida_mod:glass_dust"
+    }
+  },
+  "pattern": [
+    " BB",
+    " BB"
+  ],
+  "result": {
+    "item": "minecraft:glass"
+  }
+}

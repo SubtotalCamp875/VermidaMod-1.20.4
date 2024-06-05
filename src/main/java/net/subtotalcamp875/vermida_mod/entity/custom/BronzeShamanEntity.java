@@ -141,7 +141,7 @@ public class BronzeShamanEntity extends Monster implements RangedAttackMob {
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 5.0F, 1.0F));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Mob.class, 8.0F));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, ModEntities.BRONZE_SHAMAN.getClass())).setAlertOthers());
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true).setUnseenMemoryTicks(300));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
     }
 
     public static AttributeSupplier.Builder createAttributes() {

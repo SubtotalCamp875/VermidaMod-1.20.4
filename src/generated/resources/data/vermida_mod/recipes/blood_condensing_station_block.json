@@ -2,11 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "#": {
+      "item": "vermida_mod:shaman_blood"
+    },
     "B": {
-      "item": "vermida_mod:reinforced_compact_bronze_core"
+      "item": "vermida_mod:compact_bronze_core"
     },
     "C": {
-      "item": "vermida_mod:summoning_crystal_block"
+      "item": "vermida_mod:summoning_crystal"
     },
     "S": {
       "item": "minecraft:smooth_stone"
@@ -14,7 +17,7 @@
   },
   "pattern": [
     "CBC",
-    "S S"
+    "S#S"
   ],
   "result": {
     "item": "vermida_mod:blood_condensing_station_block"

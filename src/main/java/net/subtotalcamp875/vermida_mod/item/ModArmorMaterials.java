@@ -10,8 +10,8 @@ import net.subtotalcamp875.vermida_mod.VermidaMod;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    SUMMONING_CRYSTAL("summoning_crystal", 100, new int[]{ 4, 7, 6, 4 }, 0,
-            SoundEvents.ARMOR_EQUIP_GOLD, 3f, 0f, () -> Ingredient.of(ModItems.SUMMONING_CRYSTAL.get()));
+    SUMMONING_CRYSTAL("summoning_crystal", 100, new int[]{ 4, 8, 6, 4 }, 0,
+            SoundEvents.ARMOR_EQUIP_GOLD, 4f, 0f, () -> Ingredient.of(ModItems.SUMMONING_CRYSTAL.get()));
 
     private final String name;
     private final int durabilityMultiplier;

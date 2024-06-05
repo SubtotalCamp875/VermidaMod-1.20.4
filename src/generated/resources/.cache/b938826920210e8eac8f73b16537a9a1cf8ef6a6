@@ -1,4 +1,4 @@
-// 1.20.4	2024-06-01T17:43:43.5197548	Item Models: vermida_mod
+// 1.20.4	2024-06-05T14:06:43.5428972	Item Models: vermida_mod
 424e879c5d292cc52ad13f6f105f721c0c459f1b assets/vermida_mod/models/item/bronze_core.json
 09e686755add6392f94a7cefc61e3014f596fbba assets/vermida_mod/models/item/bronze_key.json
 718aa5749b51afd5e8f8903d9cbec0baf0d72f9e assets/vermida_mod/models/item/bronze_shaman_camp_ambience_music_disc.json
@@ -7,6 +7,7 @@
 6ba7f70642094903eccfd215ee13a2d1109deb47 assets/vermida_mod/models/item/condensed_shaman_blood.json
 7acda4c53227e3e8f88b6bb277c05cb0f75aeda4 assets/vermida_mod/models/item/echos_of_summons_music_disc.json
 646d81e2a652e954830b495ebd9c1ae715c564c7 assets/vermida_mod/models/item/extremely_condensed_shaman_blood.json
+15416fa9fadeb04a666ebf54b5096f396d511022 assets/vermida_mod/models/item/glass_dust.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/vermida_mod/models/item/leather_summon_spawn_egg.json
 9f0de1036eacdf04892c99c07803afe5e95eb1a2 assets/vermida_mod/models/item/lightly_condensed_shaman_blood.json
 26bc9be87cb36d10f7259d389d31b89381bb7190 assets/vermida_mod/models/item/magic_boots.json

@@ -65,6 +65,8 @@ public class ModItems {
             ()-> new Item(new Item.Properties().food(ModFoods.VERY_CONDENSED_SHAMAN_BLOOD).stacksTo(16)));
     public static final RegistryObject<Item> EXTREMELY_CONDENSED_SHAMAN_BLOOD = ITEMS.register("extremely_condensed_shaman_blood",
             ()-> new Item(new Item.Properties().food(ModFoods.EXTREMELY_CONDENSED_SHAMAN_BLOOD).stacksTo(16)));
+    public static final RegistryObject<Item> GLASS_DUST = ITEMS.register("glass_dust",
+            ()-> new Item(new Item.Properties().stacksTo(64)));
 
 
     public static final RegistryObject<Item> LEATHER_SUMMON_SPAWN_EGG = ITEMS.register("leather_summon_spawn_egg",

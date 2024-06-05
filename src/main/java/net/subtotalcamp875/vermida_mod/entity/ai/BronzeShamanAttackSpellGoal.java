@@ -6,7 +6,6 @@ import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.subtotalcamp875.vermida_mod.entity.custom.BronzeShamanEntity;
 import net.subtotalcamp875.vermida_mod.entity.custom.MagicOrbProjectileEntity;
-import org.apache.commons.lang3.ObjectUtils;
 
 public class BronzeShamanAttackSpellGoal extends RangedAttackGoal {
     private static final int ATTACK_RANGE = 35;
@@ -69,7 +68,7 @@ public class BronzeShamanAttackSpellGoal extends RangedAttackGoal {
     }
 
     protected void resetAttackCooldown() {
-        this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay * 2);
+        this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay * 8);
     }
 
 

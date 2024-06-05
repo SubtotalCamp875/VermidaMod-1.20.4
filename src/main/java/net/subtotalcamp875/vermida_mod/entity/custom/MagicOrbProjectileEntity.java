@@ -40,12 +40,9 @@ public class MagicOrbProjectileEntity extends ThrowableItemProjectile {
         Entity entity = pResult.getEntity();
         Entity entity1 = this.getOwner();
         LivingEntity livingentity = entity1 instanceof LivingEntity ? (LivingEntity)entity1 : null;
-        if (entity.isInvulnerableTo(damageSources().lightningBolt())) {
-            boolean flag = entity.hurt(this.damageSources().lightningBolt(), 0F);
-        } else {
-            boolean flag = entity.hurt(this.damageSources().lightningBolt(), 30.0F);
+        if (!(entity instanceof BronzeShamanEntity)) {
+            boolean flag = entity.hurt(this.damageSources().lightningBolt(), 25.0F);
         }
-
     }
 
 

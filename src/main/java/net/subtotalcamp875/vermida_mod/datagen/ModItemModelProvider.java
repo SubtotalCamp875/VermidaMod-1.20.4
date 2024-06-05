@@ -64,6 +64,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CONDENSED_SHAMAN_BLOOD);
         simpleItem(ModItems.VERY_CONDENSED_SHAMAN_BLOOD);
         simpleItem(ModItems.EXTREMELY_CONDENSED_SHAMAN_BLOOD);
+        simpleItem(ModItems.GLASS_DUST);
 
         trimmedArmorItem(ModItems.MAGIC_HELMET);
         trimmedArmorItem(ModItems.MAGIC_CHESTPLATE);

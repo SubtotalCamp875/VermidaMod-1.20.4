@@ -109,9 +109,9 @@ public class LeatherSummonEntity extends Monster {
         return Monster.createLivingAttributes()
                 .add(Attributes.MAX_HEALTH, 500.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.6)
-                .add(Attributes.ATTACK_DAMAGE, 10.0)
+                .add(Attributes.ATTACK_DAMAGE, 15.0)
                 .add(Attributes.ATTACK_KNOCKBACK, 7.0)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 0.2)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 0.5)
                 .add(Attributes.ATTACK_SPEED, 0.2)
                 .add(Attributes.FOLLOW_RANGE, 32.0F);
     }
