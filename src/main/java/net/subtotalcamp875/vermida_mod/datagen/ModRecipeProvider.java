@@ -192,7 +192,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("BBB")
                 .pattern("BBB")
                 .pattern("BBB")
-                .define('B', ModItems.SLIGHTLY_CONDENSED_SHAMAN_BLOOD.get())
+                .define('B', ModItems.LIGHTLY_CONDENSED_SHAMAN_BLOOD.get())
                 .unlockedBy(getHasName(ModItems.SHAMAN_BLOOD.get()), has(ModItems.SHAMAN_BLOOD.get()))
                 .save(pRecipeOutput);
 
